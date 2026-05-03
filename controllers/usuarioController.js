@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 const nodemailer = require('nodemailer');
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = "https://agromulti.onrender.com";
 
 // login
 exports.login = async (req, res) => {
