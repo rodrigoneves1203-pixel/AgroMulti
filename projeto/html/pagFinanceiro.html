@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Financeiro</title>
+<link rel="stylesheet" href="../css/padrão.css">
+<link rel="stylesheet" href="../css/acessibilidade.css">
+<link rel="stylesheet" href="../css/pagFinanceiro.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+  
+<!-- TOPO -->
+<header class="topo">
+    <div class="overlay">
+        <h1>Aprenda gestão de finanças</h1>
+        <p>Cuidar do dinheiro hoje é ter tranquilidade amanhã.</p>
+    </div>
+</header>
+
+<!-- CONTEÚDO -->
+<section class="container">
+
+    <!-- INTRO -->
+    <section class="intro">
+        <p class="subtexto">
+            Gestão de finanças é a prática  de planejar, 
+            controlar e analisar recursos financeiros para garantir a 
+            saúde econômica e o crescimento sustentável de uma empresa ou individuo.
+        </p>
+
+        
+        <div class="linha-divisoria"></div>
+
+        <h2 class="titulo-etapas">Entenda como funciona o seu investimento</h2>
+    </section>
+
+   
+    <!-- FLUXO -->
+    <div class="fluxo">
+
+    <div class="item">
+        <div class="icone">
+           
+            <img src="../fotos/front-view-hand-adding-coin-jar-with-plant-other-coins.jpg" alt="">
+        </div>
+        <div class="fundo"></div>
+        <p>Investimento</p>
+    </div>
+
+    <div class="linha"></div>
+
+    <div class="item">
+        <div class="icone">
+            <img src="../fotos/fotoCicloProdução2.png" alt="">
+        </div>
+        <div class="fundo"></div>
+        <p>Produção</p>
+    </div>
+
+    <div class="linha"></div>
+
+    <div class="item">
+        <div class="icone">
+            <img src="../fotos/portrait-woman-farm-with-tablet.jpg" alt="">
+        </div>
+        <div class="fundo"></div>
+        <p>Controle</p>
+    </div>
+
+    <div class="linha"></div>
+
+    <div class="item">
+        <div class="icone">
+            <img src="../fotos/Financiamento agrícola ao entardecer.png" alt="">
+        </div>
+        <div class="fundo"></div>
+        <p>Lucro</p>
+    </div>
+
+</div>
+    <!-- BARRA COLORIDA (MELHORADA) -->
+    <div class="barra">
+        <span>Planejar</span>
+        <span>investir</span>
+        <span>Produzir</span>
+        <span>controlar</span>
+        <span>lucrar</span>
+    </div>
+
+    <!-- CAIXAS -->
+    <div class="caixas">
+
+    <div class="box dica">
+        <div class="icone-box">
+            <i class="fas fa-lightbulb"></i>
+        </div>
+        <h3>Dica</h3>
+        <p>Guarde pelo menos um pouquinho
+        Mesmo que seja R$10 ou R$20, o importante é criar o hábito.
+         Com o tempo isso cresce.</p>
+    </div>
+
+    <div class="box alerta">
+        <div class="icone-box">
+            <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <h3>Atenção</h3>
+        <p>O controle financeiro é essencial para o sucesso da sua produção. 
+            Gastos não registrados podem causar prejuízos e dificultar o planejamento.
+            Sempre anote suas despesas e receitas para manter sua atividade organizada e sustentável.</p>
+    </div>
+
+</div>
+
+
+
+ <!-- CARDS -->
+    <div class="cards">
+
+<div class="card" onclick="abrirModal('financas')">
+<i class="fa-solid fa-coins"></i>
+<h3>O QUE É FINANÇAS?</h3>
+</div>
+
+<div class="card" onclick="abrirModal('despesa')">
+<i class="fa-solid fa-money-bill-wave"></i>
+<h3>O QUE É DESPEZAS?</h3>
+</div>
+
+<div class="card" onclick="abrirModal('lucro')">
+<i class="fa-solid fa-chart-line"></i>
+<h3>O QUE É LUCRO?</h3>
+</div>
+
+<div class="card" onclick="abrirModal('divida')">
+<i class="fa-solid fa-triangle-exclamation"></i>
+<h3>O QUE É DIVIDA?</h3>
+</div>
+
+<div class="card" onclick="abrirModal('economia')">
+<i class="fa-solid fa-piggy-bank"></i>
+<h3>DICAS DE ECONÔMIA.</h3>
+</div>
+
+</div>
+
+
+<!-- FUNDO ESCURO -->
+    <div class="overlay-modal" id="overlay"></div>
+
+
+    <!-- MODAL -->
+<div class="modal" id="modal">
+<div class="modal-content">
+<span class="fechar" onclick="fecharModal()">&times;</span>
+<h2 id="titulo"></h2>
+<p id="texto"></p>
+</div>
+</div>
+
+<!-- FAQ -->
+<div class="faq">
+<h2>CRIE O HÁBITO DE LEITURA 📚</h2>
+
+<div class="question" onclick="toggle(this)">
+<strong>📘 COMECE COM LEITURAS SIMPLES </strong>
+<div class="answer">Agricultura: Fatos e Mitos – Xico Graziano;<br> Administração de Custos na Agropecuária – Gilberto José dos Santos;<br>
+  Guia da Gestão Rural – Hugo Monteiro</div>
+</div>
+
+<div class="question" onclick="toggle(this)">
+<strong>📊 LEITURAS MAIS AVANÇADAS </strong>
+<div class="answer">A Agricultura Brasileira – Eliseu Alves <br>Produção de Bovinos de Corte – José Euclides Filho; <br>Basic Economics - Thomas Sowell.</div>
+</div>
+
+</div>
+
+</div>
+
+    
+    <!-- BOTÃO -->
+    <button class="btn-voltar" onclick="window.location.href='pagAjuda.html'">
+         <i class="fa-solid fa-arrow-left"></i>
+      Voltar
+    </button>
+
+</section>
+<script>
+   
+const cards = document.querySelectorAll(".card");
+const modal = document.getElementById("modal");
+const titulo = document.getElementById("titulo");
+const texto = document.getElementById("texto");
+const id_usuario = localStorage.getItem("id_usuario");
+function toggle(el){
+ let ans = el.querySelector('.answer');
+ ans.style.display = ans.style.display === 'block' ? 'none' : 'block';
+}
+
+function abrirModal(tipo){
+ let titulo = document.getElementById('titulo');
+ let texto = document.getElementById('texto');
+ let modal = document.getElementById('modal');
+
+ if(tipo === 'financas'){
+ titulo.innerText = 'Finanças';
+ texto.innerText = 'Finanças é o jeito de cuidar do dinheiro. Envolve tudo que você ganha, gasta e guarda. Ter controle das finanças ajuda a evitar problemas e realizar objetivos.';
+ }
+
+ if(tipo === 'despesa'){
+ titulo.innerText = 'Despesa';
+ texto.innerText = 'Despesa é todo dinheiro que você gasta. Pode ser algo necessário, como comida, ou algo opcional, como lazer. Controlar as despesas é essencial para não gastar mais do que ganha.';
+ }
+
+ if(tipo === 'lucro'){
+ titulo.innerText = 'Lucro';
+ texto.innerText = 'Lucro é o dinheiro que sobra depois de pagar todas as despesas. É o resultado positivo, mostrando que você ganhou mais do que gastou.';
+ }
+
+ if(tipo === 'divida'){
+ titulo.innerText = 'Dívida';
+ texto.innerText = 'Dívida é quando você deve dinheiro para alguém ou alguma empresa. Ela pode virar um problema se não for paga no prazo, por causa dos juros.';
+ }
+
+ if(tipo === 'economia'){
+ titulo.innerText = 'Economia';
+ texto.innerText = 'Evite compras por impulso, compare preços antes de comprar e tente guardar uma parte do que ganha. Pequenas atitudes no dia a dia fazem muita diferença no final do mês.';
+ }
+
+ modal.style.display = 'flex';
+}
+
+function fecharModal(){
+ document.getElementById('modal').style.display = 'none';
+}
+
+function voltar(){
+ window.location.href = 'pagAjuda.html';
+}
+
+</script>
+<script src="../script/script-acessibilidade/injetar-acessibilidade.js"></script>
+<script src="../script/top_bar/padrao.js"></script>
+</body>
+</html>

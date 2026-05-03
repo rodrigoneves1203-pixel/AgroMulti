@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Criar Ciclo</title>
+<link rel="stylesheet" href="../css/padrão.css">
+<link rel="stylesheet" href="../css/formuario_adicionar.css">
+<link rel="stylesheet" href="../css/acessibilidade.css">
+<link rel="stylesheet" href="../css/responsividade.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
+<link rel="icon"
+href="../fotos/Logo Agro Multi digital em formato favicon.png"
+type="image/png">
+
+</head>
+
+<body>
+
+<!-- CONTEÚDO PRINCIPAL -->
+<main class="pc" aria-live="polite">
+
+<img src="../fotos/AGRO MULTI original (1).png"
+class="logo1"
+alt="Logo da Agro Multi">
+
+<div class="princ">
+
+<h1>Criar Ciclo</h1>
+
+<p>
+Vamos criar um novo ciclo de produção.
+Preencha os campos abaixo para registrar um novo ciclo.
+</p>
+
+</div>
+<!-- FORMULÁRIO -->
+<div class="form-area">
+
+<label for="data_inicio">Data de início do ciclo</label>
+<input id="data_inicio"
+type="date"
+aria-label="Data de início do ciclo">
+
+<label for="nome_ciclo">Nome do ciclo</label>
+<input id="nome_ciclo"
+placeholder="Ex: Plantio de milho ou criação de gado"
+aria-label="Digite o nome do ciclo">
+
+<label for="tipo">Tipo de ciclo</label>
+<select name="tipo de ciclo" id="tipo">
+    
+    <option value="" disabled selected>Ex: Escolha o tipo de ciclo</option>
+    <option value="agricultura">Agricultura</option>
+    <option value="pecuaria">Pecuária</option>
+    <option value="agropecuaria">Agropecuária</option>
+
+</select>
+
+</div>
+
+<!-- BOTÕES -->
+<div class="bt">
+
+<button onclick="adicionarCiclo()" type="button">
+<i class="fa-solid fa-plus"></i>
+Criar Ciclo
+</button>
+
+<button onclick="window.location.href='pagina_ciclo.html'" type="button">
+<i class="fa-solid fa-arrow-left"></i>
+Voltar
+</button>
+
+</div>
+
+</main>
+
+<!-- SCRIPTS -->
+<script src="../script/script_ciclo.js"></script>
+<script src="../script/top_bar/padrao.js"></script>
+<!-- SCRIPT ÚNICO DE ACESSIBILIDADE -->
+<script src="../script/script-acessibilidade/injetar-acessibilidade.js"></script>
+
+</body>
+</html>

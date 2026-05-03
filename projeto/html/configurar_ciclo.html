@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Configurar Ciclo</title>
+
+<!-- CSS -->
+ <link rel="stylesheet" href = "../css/padrão.css">
+<link rel="stylesheet" href="../css/configurar__ciclo.css">
+<link rel="stylesheet" href="../css/acessibilidade.css">
+
+
+<!-- ÍCONES -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- FAVICON -->
+<link rel="icon" href="../fotos/Logo Agro Multi digital em formato favicon.png">
+
+</head>
+
+<body>
+
+<main class="configurar-ciclo">
+    <div class="alerta" id="alert">
+      <h4 class="alerta" id="texto">Olá, tudo bem? espero que sim. Pois bem, o ciclo em questão está fechado recomendamos que se dirija para a página relatório e atualize os dados caso seja o seu desejo!</h4>
+    </div>
+  <!-- TOPO -->
+  <header class="top-bar1">
+
+    <button class="btn-voltar" onclick="voltar()">
+      <i class="fa-solid fa-arrow-left"></i>
+      Voltar
+    </button>
+    <img src="../fotos/AGRO MULTI original (1).png"
+         class="logo1"
+         alt="Logo Agro Multi">
+
+
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <div class="container-listas">
+
+    <!-- GASTOS -->
+    <section class="lista">
+
+      <h2 class="sub_titulo">Gastos</h2>
+
+      <button id="btn-Gasto" class="btn-add" onclick="irParaCriarGasto()">
+        <i class="fa-solid fa-plus"></i>
+        Adicionar Gasto
+      </button>
+
+      <ul id="lista_gastos"></ul>
+
+    </section>
+
+    <!-- GANHOS -->
+    <section class="lista">
+
+      <h2 class="sub_titulo">Ganhos</h2>
+
+      <button id="btn-add-ganho" class="btn-add" onclick="irParaCriarGanho()">
+        <i class="fa-solid fa-plus"></i>
+        Adicionar Ganho
+      </button>
+
+      <ul id="lista_receitas"></ul>
+
+    </section>
+
+  </div>
+
+  <!-- AÇÕES -->
+  <footer class="acoes-ciclo">
+
+    <button id="gerar" class="btn-primary" onclick="encerrarCiclo()">
+      <i class="fa-solid fa-chart-line"></i>
+      Gerar Relatório
+    </button>
+
+    <button class="btn-secondary" onclick="ver_relatorio()">
+      <i class="fa-solid fa-file-lines"></i>
+      Ver Relatório
+    </button>
+
+    <button class="btn-delete" onclick="deletarCiclo()">
+      <i class="fa-solid fa-trash"></i>
+      Deletar Ciclo
+    </button>
+
+  </footer>
+
+</main>
+
+<!-- SCRIPTS -->
+ <script src="../script/top_bar/padrao.js"></script>
+<script src="../script/configurar_ciclo.js"></script>
+<script src="../script/script-acessibilidade/injetar-acessibilidade.js"></script>
+
+</body>
+</html>

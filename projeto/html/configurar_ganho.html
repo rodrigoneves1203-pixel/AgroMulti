@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Configurar Ganho</title>
+<link rel="stylesheet" href="../css/padrão.css">
+<link rel="stylesheet" href="../css/configurar_gasto.css">
+<link rel="stylesheet" href="../css/acessibilidade.css">
+<link rel="stylesheet" href="../css/responsividade.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link rel="icon"
+href="../fotos/Logo Agro Multi digital em formato favicon.png"
+type="image/png">
+
+</head>
+
+<body>
+
+<button class="btn-voltar"
+onclick="voltar()"
+aria-label="Voltar para a página anterior">
+ <i class="fa-solid fa-arrow-left"></i>
+      Voltar
+
+</button>
+
+<main>
+
+<img src="../fotos/AGRO MULTI original (1).png"
+class="logo"
+alt="Logo da Agro Multi">
+
+<h1>Editar Ganho</h1>
+
+<p>
+Escolha o campo que deseja atualizar
+</p>
+
+<label for="campo">
+Campo que deseja alterar
+</label>
+
+<select id="campo"
+onchange="mostrarCampo()"
+aria-label="Selecionar campo do ganho para editar">
+
+<option value="">Selecione</option>
+
+<option value="nome_produto">
+Nome do produto
+</option>
+
+<option value="valor_receita">
+Valor da venda
+</option>
+
+<option value="data_venda">
+Data da venda
+</option>
+
+<option value="descricao_venda">
+Descrição da venda
+</option>
+
+<option value="quantidade">
+Quantidade vendida
+</option>
+
+</select>
+
+<div id="area-input"
+aria-live="polite"
+aria-label="Campo para editar o valor selecionado">
+
+</div>
+
+<button class="bt"
+onclick="atualizar()"
+aria-label="Salvar alteração do ganho">
+
+<span>Salvar Alteração</span>
+
+</button>
+
+</main>
+
+<script src="../script/configurar_ganho.js">
+
+</script>
+
+<script src="../script/top_bar/padrao.js"></script>
+<!-- SCRIPT GLOBAL DE ACESSIBILIDADE -->
+
+<script src="../script/script-acessibilidade/injetar-acessibilidade.js"></script>
+
+</body>
+</html>

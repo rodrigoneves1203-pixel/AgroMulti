@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ciclo de Produção</title>
+
+<link rel="stylesheet" href="../css/pagCicloProdução.css">
+<link rel="stylesheet" href="../css/padrão.css">
+<link rel="stylesheet" href="../css/acessibilidade.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="icon" href="../fotos/Logo Agro Multi digital em formato favicon.png"  type="image/png" >
+</head>
+
+<body>
+  
+<!-- TOPO -->
+<header class="topo">
+    <div class="overlay">
+        <h1>Ciclo de Produção</h1>
+        <p>Entenda as etapas do ciclo produtivo no campo e na pecuária</p>
+    </div>
+</header>
+
+<!-- CONTEÚDO -->
+<section class="container" style="margin-top:90px;">
+  <!-- INTRO -->
+    <section class="intro">
+        <p class="subtexto">
+            O ciclo de produção representa todas as etapas necessárias para transformar recursos em produtos finais,
+            seja na agricultura ou na pecuária.
+        </p>
+  
+
+    <div class="linha-divisoria"></div>
+    <!-- FLUXO -->
+    <div class="fluxo">
+
+    <div class="item">
+        <div class="icone">
+            <img src="../fotos/fotoCicloProdução1.png" alt="">
+        </div>
+        <div class="fundo"></div>
+        <p>Planejamento</p>
+    </div>
+
+    <div class="linha"></div>
+
+    <div class="item">
+        <div class="icone">
+            <img src="../fotos/fotoCicloProdução2.png" alt="">
+        </div>
+        <div class="fundo"></div>
+        <p>Produção</p>
+    </div>
+
+    <div class="linha"></div>
+
+    <div class="item">
+        <div class="icone">
+            <img src="../fotos/fotosCicloProsução3.jpg" alt="">
+        </div>
+        <div class="fundo"></div>
+        <p>Colheita / Criação</p>
+    </div>
+
+    <div class="linha"></div>
+
+    <div class="item">
+        <div class="icone">
+            <img src="../fotos/fotoCicloProdução4.jpg" alt="">
+        </div>
+        <div class="fundo"></div>
+        <p>Venda</p>
+    </div>
+
+</div>
+    <!-- BARRA COLORIDA (MELHORADA) -->
+    <div class="barra">
+        <span>Planejar</span>
+        <span>Produzir</span>
+        <span>Colher / Criar</span>
+        <span>Vender</span>
+    </div>
+
+    <!-- CAIXAS -->
+    <div class="caixas">
+
+    <div class="box dica">
+        <div class="icone-box">
+            <i class="fas fa-lightbulb"></i>
+        </div>
+        <h3>Dica</h3>
+        <p>Planeje com antecedência para evitar prejuízos e melhorar a produtividade.</p>
+    </div>
+
+    <div class="box alerta">
+        <div class="icone-box">
+            <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <h3>Atenção</h3>
+        <p>Erros no manejo podem comprometer toda a produção.</p>
+    </div>
+
+</div>
+
+
+
+ <!-- CARDS -->
+    <div class="cards"> 
+
+     <div class="card">
+            <i class="fa-solid fa-leaf"></i>
+            <h3>TIPOS DE AGRICULTURA</h3>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-seedling"></i>
+            <h3>GESTÃO RURAL</h3>
+        </div>
+
+        <div class="card">
+            <img src="../fotos/vaca.png" class="icone" alt="Pecuária">
+            <h3>PECUÁRIA</h3>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-cloud-sun"></i>
+            <h3>CLIMA E AGRICULTURA</h3>
+        </div>
+
+    </div>
+
+<!-- FUNDO ESCURO -->
+    <div class="overlay-modal" id="overlay"></div>
+
+
+    <!-- MODAL -->
+<div class="modal" id="modal">
+<div class="modal-content">
+<span class="fechar" onclick="fecharModal()">&times;</span>
+<h2 id="titulo"></h2>
+<p id="texto"></p>
+</div>
+</div>
+
+    
+    <button class="btn-voltar" onclick="window.location.href='pagAjuda.html'">
+<i class="fa-solid fa-arrow-left"></i>
+<span>Voltar</span>
+</button>
+
+</section>
+<script>
+   
+const cards = document.querySelectorAll(".card");
+const modal = document.getElementById("modal");
+const titulo = document.getElementById("titulo");
+const texto = document.getElementById("texto");
+
+// CONTEÚDO DOS CARDS
+const conteudos = [
+    {
+        titulo: "TIPOS DE AGRICULTURA",
+        texto: "A agricultura pode ser dividida em vários tipos, como agricultura familiar, comercial, orgânica e de subsistência."
+    },
+    {
+        titulo: "GESTÃO RURAL",
+        texto: "A gestão rural envolve planejamento, controle financeiro e organização das atividades no campo."
+    },
+    {
+        titulo: "PECUÁRIA",
+        texto: "A pecuária é a criação de animais para produção de alimentos como carne e leite."
+    },
+    {
+        titulo: "CLIMA E AGRICULTURA",
+        texto: "O clima influencia diretamente na produção agrícola, afetando o crescimento e a produtividade."
+    }
+];
+
+// AGORA SIM: EVENTO DOS CARDS
+cards.forEach((card, index) => {
+    card.addEventListener("click", () => {
+        titulo.innerText = conteudos[index].titulo;
+        texto.innerText = conteudos[index].texto;
+
+        modal.style.display = "flex";
+    });
+});
+
+// FECHAR MODAL
+function fecharModal() {
+    modal.style.display = "none";
+}
+
+// FECHAR CLICANDO FORA
+modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        modal.style.display = "none";
+    }
+});
+
+// FECHAR COM ESC
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        modal.style.display = "none";
+    }
+});
+const id_usuario = localStorage.getItem("id_usuario")
+</script>
+<script src="../script/script-acessibilidade/injetar-acessibilidade.js"></script>
+<script src="../script/top_bar/padrao.js"></script>
+</body>
+</html>

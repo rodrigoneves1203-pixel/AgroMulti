@@ -1,0 +1,420 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI', Arial, sans-serif;
+}
+
+
+body{
+
+min-height:100vh;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-image:url("../fotos/Paisagem\ pastoral\ para\ planejamento\ agrícola.png");
+background-repeat: no-repeat;
+background-size:cover;
+background-position:center;
+background-attachment: fixed;
+filter:blur(2px);
+z-index:-1;
+}
+
+
+
+/* HEADER */
+
+header{
+
+width:100%;
+height:80px;
+
+background:linear-gradient(90deg,#2f7f53,#3da368);
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+color:white;
+font-size:30px;
+font-weight:bold;
+
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+
+}
+
+/* MAIN */
+
+main{
+
+width:80%;
+max-width:900px;
+
+margin-top:40px;
+
+}
+
+/* TITULO */
+
+h2{
+
+text-align:center;
+margin-bottom:30px;
+
+color:#1f6b3b;
+
+font-size:28px;
+
+}
+
+/* BOTAO VOLTAR */
+.btn-voltar {
+
+position:absolute;
+
+top:92px;
+left:20px;
+
+padding:10px 16px;
+
+font-size:14px;
+font-weight:500;
+
+background:linear-gradient(135deg,#119258,#1f6b3b);
+
+color:white;
+
+border:none;
+
+border-radius:25px;
+
+cursor:pointer;
+
+box-shadow:0 4px 10px rgba(0,0,0,0.25);
+
+transition:0.25s;
+z-index: 13;
+
+}
+
+/* HOVER */
+
+.btn-voltar:hover{
+
+background:linear-gradient(135deg,#1f6b3b,#2faa6d);
+
+transform:translateY(-2px);
+
+box-shadow:0 6px 15px rgba(0,0,0,0.35);
+
+}
+
+/* CLICK */
+
+.btn-voltar:active{
+
+transform:scale(0.95);
+
+}
+
+/* CONTAINER RELATORIOS */
+
+.container_relatorios{
+
+display:flex;
+flex-direction:column;
+gap:10px;
+
+}
+
+/* CARD RELATORIO */
+
+.card_relatorio{
+
+background:rgba(255,255,255,0.80);
+
+backdrop-filter:blur(12px);
+
+border-radius:14px;
+
+padding:22px;
+
+box-shadow:0 6px 15px rgba(0,0,0,0.25);
+
+transition:0.25s;
+
+}
+
+.card_relatorio:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 10px 20px rgba(0,0,0,0.25);
+
+}
+
+/* TITULO CICLO */
+
+.card_relatorio h3{
+
+color:#1f6b3b;
+
+margin-bottom:10px;
+
+font-size:20px;
+
+}
+
+/* TEXTOS */
+
+.card_relatorio p{
+
+margin:5px 0;
+
+font-size:15px;
+
+}
+
+/* BOTOES */
+
+.botoes{
+
+margin-top:15px;
+
+display:flex;
+gap:10px;
+
+}
+
+/* BOTAO PADRAO */
+
+.botoes button{
+
+border:none;
+
+padding:9px 16px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+background:#2f7f53;
+
+color:white;
+
+font-weight:500;
+
+transition:0.25s;
+
+}
+
+/* HOVER BOTAO */
+
+.botoes button:hover{
+
+background:#3da368;
+
+transform:scale(1.05);
+
+}
+
+/* POPUP */
+
+.popup{
+
+display:none;
+
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,0.6);
+
+align-items:center;
+justify-content:center;
+
+}
+
+/* CONTEUDO POPUP */
+
+.conteudo_popup{
+
+background:rgba(255,255,255,0.95);
+
+backdrop-filter:blur(10px);
+
+padding:30px;
+
+border-radius:12px;
+
+width:420px;
+
+position:relative;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+
+text-align:center;
+
+}
+
+/* BOTAO FECHAR */
+
+
+
+/* GRAFICO */
+
+canvas{
+
+margin-top:15px;
+
+}
+
+/* POPUP FUNDO */
+
+.popup{
+
+display:none;
+
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,0.6);
+
+align-items:center;
+justify-content:center;
+
+backdrop-filter:blur(4px);
+
+animation: fadeIn 0.3s ease;
+
+}
+
+/* CONTEUDO DO POPUP */
+
+.conteudo_popup{
+
+background:rgba(255,255,255,0.95);
+
+backdrop-filter:blur(12px);
+
+padding:30px;
+
+border-radius:16px;
+
+width:450px;
+
+max-width:90%;
+
+position:relative;
+
+text-align:center;
+
+box-shadow:0 15px 40px rgba(0,0,0,0.35);
+
+animation: subir 0.3s ease;
+
+}
+
+/* TITULO */
+
+.conteudo_popup h3{
+
+color:#1f6b3b;
+
+margin-bottom:15px;
+
+font-size:22px;
+
+}
+
+/* BOTAO FECHAR */
+
+#fechar_popup{
+
+position:absolute;
+
+top:10px;
+right:15px;
+
+font-size:24px;
+padding: 5px;
+border: none;
+font-weight:bold;
+
+cursor:pointer;
+
+color:#444;
+
+transition:0.2s;
+
+}
+
+#fechar_popup:hover{
+
+color:red;
+transform:scale(1.2);
+
+}
+
+.status.lucro{
+color:green;
+font-weight:bold;
+}
+
+.status.prejuizo{
+color:red;
+font-weight:bold;
+}
+
+/* GRAFICO */
+
+canvas{
+
+margin-top:10px;
+
+}
+
+/* ANIMAÇÕES */
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+}
+
+to{
+opacity:1;
+}
+
+}
+
+@keyframes subir{
+
+from{
+transform:translateY(30px);
+opacity:0;
+}
+
+to{
+transform:translateY(0);
+opacity:1;
+}
+
+}

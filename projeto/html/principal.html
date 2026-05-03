@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AgroMulti</title>
+<link rel="stylesheet" href="../css/padrão.css">
+<link rel="stylesheet" href="../css/pagInicial.css">
+<link rel="stylesheet" href="../css/acessibilidade.css">
+<link rel="stylesheet" href="../css/responsividade.css">
+
+<link rel="icon"
+href="../fotos/Logo Agro Multi digital em formato favicon.png"
+type="image/png">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+
+</head>
+
+<body>
+
+<!-- CONTEÚDO PRINCIPAL -->
+
+<main class="main"
+aria-live="polite">
+
+<div class="titulo-container">
+
+
+
+
+</div>
+
+
+<!-- BOTÕES PRINCIPAIS -->
+
+<div class="botoes-inicio">
+
+<button onclick="window.location.href='pagina_ciclo.html'"
+aria-label="Abrir ciclos de produção">
+
+<i class="fa-solid fa-seedling"></i>
+
+<span>Ciclo de Produção</span>
+
+</button>
+<button onclick="window.location.href='notas.html'"
+aria-label="Bloco de anotções">
+
+<i class="fa-solid fa-clipboard-list"></i>
+
+<span>Bloco de anotações</span>
+
+</button>
+
+<button onclick="ir_relatorio()"
+aria-label="Abrir relatórios do sistema">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<span>Relatório</span>
+
+</button>
+
+<button onclick="window.location.href='Perfil.html'"
+aria-label="Abrir perfil do usuário">
+
+<i class="fa-solid fa-user"></i>
+
+<span>Perfil</span>
+
+</button>
+
+<button onclick="window.location.href='parcerias.html'"
+aria-label="Abrir parcerias">
+
+<i class="fa-solid fa-handshake"></i>
+
+<span>Parcerias</span>
+
+</button>
+
+<button onclick="window.location.href='pagAjuda.html'"
+aria-label="Abrir ajuda do sistema">
+
+<i class="fa-solid fa-circle-question"></i>
+
+<span>Ajuda</span>
+
+</button>
+
+<button onclick="window.location.href='index.html'"
+aria-label="Sair do sistema">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+<span>Sair</span>
+
+</button>
+
+</div>
+
+</main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+const id_ciclo = localStorage.getItem("ciclo")
+const id_usuario = localStorage.getItem("id_usuario")
+
+const toggleBtn = document.querySelector(".menu-toggle")
+const sidebar = document.querySelector(".sidebar")
+
+toggleBtn.addEventListener("click", () => {
+
+sidebar.classList.toggle("active")
+
+})
+
+function ir_relatorio(){
+
+window.location.href = `relatorio.html?id=${id_usuario}`
+
+}
+
+</script>
+
+
+<!-- SCRIPT GLOBAL DE ACESSIBILIDADE -->
+
+<script src="../script/script-acessibilidade/injetar-acessibilidade.js"></script>
+<script src="../script/top_bar/padrao.js"></script>
+</body>
+</html>

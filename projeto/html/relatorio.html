@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Relatórios</title>
+<link rel="stylesheet" href="../css/padrão.css">
+
+<link rel="stylesheet" href="../css/relatorios.css">
+<link rel="stylesheet" href="../css/acessibilidade.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link rel="icon"
+href="../fotos/Logo Agro Multi digital em formato favicon.png"
+type="image/png">
+
+</head>
+
+<body>
+<main>
+
+<button class="btn-voltar"
+onclick="history.back()"
+aria-label="Voltar para a página anterior">
+
+ <i class="fa-solid fa-arrow-left"></i>
+      Voltar
+
+</button>
+
+<div id="lista_relatorios"
+class="container_relatorios"
+aria-live="polite"
+aria-label="Lista de relatórios gerados">
+
+</div>
+
+</main>
+
+<!-- POPUP DO GRAFICO -->
+
+<div id="popup_grafico"
+class="popup"
+role="dialog"
+aria-label="Gráfico do ciclo">
+
+<div class="conteudo_popup">
+
+<button id="fechar_popup"
+aria-label="Fechar gráfico">
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+<h3>
+
+<i class="fa-solid fa-chart-pie"></i>
+
+<span>Gráfico do Ciclo</span>
+
+</h3>
+
+<canvas id="grafico"
+aria-label="Gráfico de gastos e receitas do ciclo">
+
+</canvas>
+
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+const fechar = document.getElementById("fechar_popup")
+
+fechar.addEventListener("click", function(){
+
+document.getElementById("popup_grafico").style.display = "none"
+
+})
+
+</script>
+
+<script src="../script/relatorios.js"></script>
+
+<!-- SCRIPT GLOBAL DE ACESSIBILIDADE -->
+
+<script src="../script/script-acessibilidade/injetar-acessibilidade.js"></script>
+<script src="../script/top_bar/padrao.js"></script>
+</body>
+</html>

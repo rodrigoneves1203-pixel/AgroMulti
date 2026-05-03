@@ -1,0 +1,287 @@
+/* ============================= */
+/* BOTÃO DE ACESSIBILIDADE */
+/* ============================= */
+
+.acess-btn{
+position:fixed;
+top:10px;
+right:15px;
+
+width:55px;
+height:55px;
+
+background:#2e7d32;
+color:white;
+
+border-radius:50%;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+cursor:pointer;
+
+font-size:24px;
+
+transition:0.3s;
+
+z-index:99999;
+}
+
+.acess-btn:hover{
+background:#256628;
+color:#ffffff;
+}
+
+
+/* ============================= */
+/* SIDEBAR DE ACESSIBILIDADE */
+/* ============================= */
+
+.sidebar-acess{
+position:fixed;
+top:0;
+right:-320px;
+
+width:280px;
+height:100vh;
+
+background:linear-gradient(180deg,#2f6f44,#1f4d30);
+
+padding:90px 20px 40px 20px;
+
+display:flex;
+flex-direction:column;
+gap:9px;
+overflow: scroll;
+transition:right 0.35s ease;
+
+z-index:150;
+}
+
+.sidebar-acess.ativa{
+right:0;
+}
+
+
+/* ============================= */
+/* HEADER DA ACESSIBILIDADE */
+/* ============================= */
+
+.acess-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+color:#F4EDE4;
+
+margin-bottom:5px;
+}
+
+
+/* ============================= */
+/* BOTÃO FECHAR */
+/* ============================= */
+
+.btn-fechar-acess{
+background:none;
+border:none;
+
+font-size:20px;
+
+cursor:pointer;
+
+color:#ccc;
+
+padding:5px;
+
+transition:0.2s;
+}
+
+.btn-fechar-acess:hover{
+color:white;
+transform:scale(1.1);
+}
+
+
+/* ============================= */
+/* TITULOS DAS SEÇÕES */
+/* ============================= */
+
+.sidebar-acess h6{
+font-size:0.85rem;
+font-weight:600;
+letter-spacing:1px;
+
+margin-top:6px;
+margin-bottom:2px;
+
+color:#d9e6db;
+}
+
+
+/* ============================= */
+/* LINHA DIVISÓRIA */
+/* ============================= */
+
+/* ============================= */
+/* BOTÕES DO MENU */
+/* ============================= */
+
+.sidebar-acess button{
+
+width:100%;
+
+padding:14px 18px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:rgba(255,255,255,0.12);
+
+border:none;
+border-radius:14px;
+
+color:#F4EDE4;
+
+font-size:0.95rem;
+font-weight:600;
+
+cursor:pointer;
+
+transition:0.25s;
+}
+
+.sidebar-acess button:hover{
+background:rgba(255,255,255,0.25);
+transform:translateX(3px);
+}
+.sidebar-acess .button{
+    width: 30px;
+}
+
+/* ============================= */
+/* SCROLLBAR */
+/* ============================= */
+
+.sidebar-acess::-webkit-scrollbar{
+width:6px;
+}
+
+.sidebar-acess::-webkit-scrollbar-thumb{
+background:#4CAF50;
+border-radius:10px;
+}
+
+
+/* ============================= */
+/* FOCO PARA TECLADO */
+/* ============================= */
+
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus{
+
+outline:3px solid #FFD54F;
+outline-offset:2px;
+
+}
+
+
+/* ============================= */
+/* MODO DALTÔNICO */
+/* ============================= */
+
+body.daltonico{
+color:#111;
+}
+
+/* sidebar */
+
+body.daltonico .sidebar{
+background:#1b3a5f;
+}
+
+/* botões */
+
+body.daltonico button{
+background:#005f99;
+color:white;
+}
+
+/* hover */
+
+body.daltonico button:hover{
+color:#ffffff;
+background:#06415f;
+}
+
+/* ciclos */
+
+body.daltonico .ciclo{
+background:#e6f0ff;
+border-left:6px solid #005f99;
+}
+
+/* títulos */
+
+body.daltonico .title1{
+color:#003f6b;
+}
+body.daltonico .sidebar-acess {
+background:#1b3a5f;
+}
+body.daltonico .acess-btn{
+    background:#1b3a5f;
+}
+
+/* ============================= */
+/* DESTAQUE DO TEXTO SENDO LIDO */
+/* ============================= */
+
+.leitura-ativa{
+outline:3px solid orange;
+border-radius:6px;
+}
+
+body.daltonico #fechar_popup{
+    color: #ffffff;
+    width: 50px;
+    height: 50px;
+}
+/* ============================= */
+/* MELHORIAS VISUAIS */
+/* ============================= */
+
+img{
+max-width:100%;
+height:auto;
+}
+
+/* links */
+
+a{
+text-decoration:none;
+}
+
+a:hover{
+text-decoration:underline;
+}
+
+.sidebar-acess hr{
+
+width:100%;
+height:1px;
+
+border:none;
+
+background:rgba(255,255,255,0.35);
+
+margin:10px 0;
+
+flex-shrink:0;
+
+}

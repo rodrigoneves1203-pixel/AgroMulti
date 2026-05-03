@@ -1,0 +1,449 @@
+body{
+    margin: 0;
+     background:#F4EDE4;
+    font-family: Arial;
+    background-position: top;
+    background-size:cover
+}
+
+.topo{
+    height:300px;
+    background: url("../fotos/Apoio\ agrícola\ ao\ amanhecer.png") center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+/* OVERLAY */
+.overlay{
+    background: rgba(0,0,0,0.5);
+    color:white;
+    text-align:center;
+    padding:30px;
+    width:100%;
+}
+
+.overlay h1{
+    margin:0;
+    font-size:40px;
+}
+
+.overlay p{
+    margin-top:10px;
+    font-size:18px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 900px;
+    margin: auto;
+}
+
+
+.search-box input{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius:10px 0 0 10px; /* corrigido */
+    outline: none;
+}
+
+.search-box button{
+    padding:12px;
+    border:none;
+    background:#3FA34D;
+    color:white;
+    border-radius:0 10px 10px 0;
+    cursor:pointer;
+}
+
+
+/* CARDS */
+.card{
+    border: none;           /* remove borda padrão */
+    background: none;       /* evita conflito */
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding:10px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    cursor:pointer;
+    transition:0.3s;
+
+    text-decoration: none;
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 380px));
+    justify-content: center;
+    gap: 25px; /* aumenta o espaço entre eles */
+    margin-top: 40px;
+      height: 180px; /* afasta do topo */
+}
+.card h3 {
+    font-size: 20px;
+}
+
+.card p {
+    font-size: 30px;
+}
+
+.card{
+    padding:8px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    cursor:pointer;
+    transition:0.3s;
+      text-decoration: none;
+}
+
+.card:hover{ 
+    transform: scale(1.05);
+    text-decoration: none;
+}
+
+.card h3{
+    color: #1F5E3B;
+}
+
+/* ===== CORES DOS CARDS ===== */
+
+/* CARD 1 (verde) */
+.card:nth-child(1){
+    background:#3FA34D;
+}
+
+.card:nth-child(1) h3,
+.card:nth-child(1) i{
+    color:white;
+}
+
+/* CARD 3 (azul) */
+.card:nth-child(2){
+    background:#2D9CDB;
+}
+
+.card:nth-child(2) h3,
+.card:nth-child(2) i{
+    color:white;
+}
+/* FAQ */
+.faq{
+    padding: 20px 15px;
+     margin-top: 50px;
+    margin-top: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* TÍTULO */
+.faq h2{
+    font-size: clamp(20px, 3.5vw, 30px);
+    line-height: 1.2;
+    color:#1F5E3B;
+    font-weight:700;
+    text-align:center;
+    margin-bottom:20px;
+    word-break: break-word;
+}
+@media (max-width: 480px) {
+    .faq h2 {
+        font-size: 20px;
+        line-height: 1.3;
+    }
+}
+
+/* CAIXA */
+.question{
+    background:rgba(255, 255, 255, 0.966);
+    padding:18px;
+    border-radius:12px;
+    margin-bottom:12px;
+    cursor:pointer;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    transition:0.3s;
+    border-left:5px solid transparent;
+}
+
+/* HOVER */
+.question:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.12);
+    border-left:5px solid #3FA34D;
+}
+
+/* PERGUNTA */
+.pergunta{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-direction: row-reverse;
+    font-weight:600;
+    color:#000000;
+}
+
+/* SETA */
+.arrow i{
+    transition:0.3s;
+}
+
+/* GIRAR SETA QUANDO ABRIR */
+.question.active .arrow i{
+    transform:rotate(180deg);
+}
+
+/* RESPOSTA */
+.answer{
+    text-align: justify;
+    display:none;
+    margin-top:12px;
+    color:#040404;
+    line-height:1.6;
+    font-size:14px;
+    animation:fadeIn 0.3s ease;
+}
+
+/* QUANDO ABRIR */
+.question.active .answer{
+    display:block;
+}
+
+/* ANIMAÇÃO */
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(-5px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+/* SUPORTE */
+.support{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    margin-top:20px;
+    text-align:center;
+    margin-bottom: 50px;
+}
+.support p {
+    color: #000000;
+    font-size: 25px; /* aumenta o texto */
+}
+.support button {
+    font-size: 18px; /* aumenta o texto */
+    padding: 15px 25px; /* deixa o botão maior */
+}
+
+.support button{
+    background:#2D9CDB;
+    color:white;
+    padding:20px 60px;
+    border:none;
+    border-radius:40px;
+    cursor:pointer;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+    justify-content:center;
+
+    transition:0.3s;
+
+}
+/* animação ao passar o mouse */
+.support button:hover{
+    transform: scale(1.05);
+    background:#1c7cb8;
+}
+
+/* anima o ícone */
+.support button i{
+    font-size:20px;
+    transition:0.3s;
+}
+
+.support button:hover i{
+    transform: rotate(-10deg) scale(1.2);
+}
+
+
+.card i{
+    font-size: 32px;
+    color: #1F5E3B;
+    margin-bottom: 10px;
+    display:block;
+    transition: 0.3s;
+      
+}
+
+.card:hover i{
+    transform: scale(1.2);
+    color: #d1e3da;
+     
+}
+
+
+/* FUNDO ESCURO */
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(255, 255, 255, 0.5);
+
+    
+    justify-content:center;
+    align-items:center;
+}
+
+/* CAIXA DO MODAL */
+.modal-content{
+    position:relative; /* ESSENCIAL pro X funcionar */
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    width:300px;
+    animation: aparecer 0.3s ease;
+}
+
+/* ANIMAÇÃO */
+@keyframes aparecer{
+    from{
+        transform: scale(0.8);
+        opacity:0;
+    }
+    to{
+        transform: scale(1);
+        opacity:1;
+    }
+}
+
+/* BOTÃO X */
+.fechar{
+    position:absolute;
+    top:10px;
+    right:15px;
+    font-size:22px;
+    font-weight:bold;
+    cursor:pointer;
+    color:#555;
+    transition:0.3s;
+}
+
+.fechar:hover{
+    color:#000;
+    transform:scale(1.2);
+}
+
+/* BOTÕES DO MODAL */
+.modal-content button{
+    width:100%;
+    margin-top:10px;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#3FA34D;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.modal-content button:hover{
+    background:#2e7d32;
+}
+
+/* BOTÃO VOLTAR */
+.voltar {
+    background: #757575;
+}
+
+.voltar:hover {
+    background: #424242;
+}
+
+.btn-voltar {
+ position: fixed; /* fixa na tela */
+    top:90px;
+    left:20px;
+    z-index: 99;
+padding:12px 20px;
+
+font-size:14px;
+font-weight:500;
+
+background:linear-gradient(135deg,#119258,#1f6b3b);
+
+color:white;
+
+border:none;
+
+border-radius:25px;
+
+cursor:pointer;
+
+box-shadow:0 4px 10px rgba(0,0,0,0.25);
+
+transition:0.25s;
+
+}
+
+
+/* HOVER */
+
+.btn-voltar:hover{
+
+background:linear-gradient(135deg,#1f6b3b,#2faa6d);
+
+transform:translateY(-2px);
+
+box-shadow:0 6px 15px rgba(0,0,0,0.35);
+
+}
+
+/* CLICK */
+
+.btn-voltar:active{
+
+transform:scale(0.95);
+
+}
+@media (max-width: 768px){
+    .voltar{
+        top: 40px;
+        left: 10px;
+    }
+
+    .voltar a{
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}
+
+
+a{
+      text-decoration: none;
+}
+@media (max-width: 768px){
+    .faq{
+        margin-top: 60px;
+    }
+
+    .cards{
+        gap: 20px;
+    }
+}

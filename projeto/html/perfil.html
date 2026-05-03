@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Perfil</title>
+
+<link rel="stylesheet" href="../css/padrão.css">
+<link rel="stylesheet" href="../css/acessibilidade.css">
+<link rel="stylesheet" href="../css/responsividade.css">
+
+<link rel="stylesheet" href="../css/perfil.css">
+
+<link rel="icon"
+href="../fotos/Logo Agro Multi digital em formato favicon.png"
+type="image/png">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<button class="btn-voltar"
+onclick="history.back()"
+aria-label="Voltar para página anterior">
+
+ <i class="fa-solid fa-arrow-left"></i>
+      Voltar
+
+</button>
+
+
+<div class="container">
+
+<div class="box">
+
+<div class="foto-area">
+
+<img id="preview"
+src="https://via.placeholder.com/120"
+alt="Foto de perfil do usuário">
+
+<label for="foto">
+Selecionar nova foto
+</label>
+
+<input type="file"
+id="foto"
+aria-label="Selecionar foto de perfil">
+
+</div>
+
+
+<label for="nome">
+Nome
+</label>
+
+<input type="text"
+id="nome"
+aria-label="Nome do usuário">
+
+
+<label for="email">
+Email
+</label>
+
+<input type="email"
+id="email"
+readonly
+aria-label="Email do usuário">
+
+
+<label for="senha">
+Nova senha
+</label>
+
+<input type="password"
+id="senha"
+placeholder="Digite nova senha"
+aria-label="Digite uma nova senha">
+
+
+<div class="botoes">
+
+<button id="salvar"
+aria-label="Salvar alterações do perfil">
+
+<span>Salvar</span>
+
+</button>
+
+
+<button id="cancelar"
+aria-label="Cancelar alterações do perfil">
+
+<span>Cancelar</span>
+
+</button>
+
+
+<button id="excluir"
+class="excluir"
+aria-label="Excluir conta do usuário">
+
+<span>Excluir Conta</span>
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="../script/perfil.js">
+</script>
+<script src="../script/top_bar/padrao.js">
+</script>
+<!-- SCRIPT GLOBAL DE ACESSIBILIDADE -->
+<script src="../script/script-acessibilidade/injetar-acessibilidade.js"></script>
+
+</body>
+
+</html>

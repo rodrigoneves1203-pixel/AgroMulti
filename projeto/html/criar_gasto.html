@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Criar Gasto</title>
+<link rel="stylesheet" href="../css/padrão.css">
+<link rel="stylesheet" href="../css/formuario_adicionar.css">
+<link rel="stylesheet" href="../css/acessibilidade.css">
+<link rel="stylesheet" href="../css/responsividade.css">
+
+<link rel="icon" href="../fotos/Logo Agro Multi digital em formato favicon.png" type="image/png">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<button class="btn-voltar" onclick="voltar()" aria-label="Voltar">
+ <i class="fa-solid fa-arrow-left"></i>
+      Voltar
+</button>
+
+<main>
+
+<img src="../fotos/AGRO MULTI original (1).png" class="logo1" alt="Logo Agro Multi">
+
+<h1>Adicionar Gasto</h1>
+<p>Preencha os dados abaixo</p>
+<label for="data_inicio">Data</label>
+<input id="data_inicio" type="date">
+
+<label for="nome_gasto">Nome do gasto</label>
+<input id="nome_gasto" placeholder="Ex: Compra de ração po compra de adubo">
+
+<label for="descricao_gasto">Descrição</label>
+<input id="descricao_gasto" placeholder="Ex: Ração para gado leiteiro ou adubo">
+
+<label for="valor">Valor</label>
+<input id="valor" placeholder="Ex: 150,50">
+
+<button onclick="adicionarGasto()">
+Adicionar Gasto
+</button>
+
+</main>
+
+<script src="../script/criar_gastos.js"></script>
+<script src="../script/top_bar/padrao.js"></script>
+<!-- SCRIPT PADRÃO DE ACESSIBILIDADE -->
+<script src="../script/script-acessibilidade/injetar-acessibilidade.js"></script>
+
+</body>
+</html>

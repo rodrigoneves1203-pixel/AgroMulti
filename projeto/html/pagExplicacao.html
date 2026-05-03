@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgroMulti</title>
+
+<style>
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* FUNDO */
+body{
+    background: 
+    linear-gradient(rgba(0,0,0,0.4), rgba(0, 0, 0, 0.4)),
+    url("https://images.unsplash.com/photo-1500382017468-9049fed747ef");
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    min-height:100vh;
+}
+
+/* BARRA SUPERIOR */
+.navbar{
+    width:100%;
+    height:80px;
+    background:linear-gradient(90deg, #0f2027c0, #203a438d, #2c5364);
+    backdrop-filter: blur(5px);
+    display:flex;
+    align-items:center;
+    padding:0 40px;
+    color:rgb(236, 227, 227);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.logo img{
+    width:150px;
+}
+
+
+/* CONTAINER */
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:30px auto;
+}
+
+/* CARROSSEL */
+.carousel{
+    position: relative;
+}
+
+.carousel img{
+    width:100%;
+    height:450px;
+    object-fit:cover;
+    border-radius:20px;
+}
+
+/* BOTÕES */
+.btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(255,255,255,0.7);
+    border:none;
+    padding:10px 15px;
+    cursor:pointer;
+    font-size:18px;
+    border-radius:50%;
+}
+
+.prev{ left:15px; }
+.next{ right:15px; }
+
+/* ÁREA DE CARDS (GRANDE) */
+.cards{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+    align-items:center;
+}
+.card{
+    width:100%;
+}
+
+/* CARD */
+.card{
+    background: rgba(255, 255, 255, 0.744);
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+    transition:0.3s;
+    min-height:180px;
+}
+.card p{
+    text-align: justify;
+}
+.card img{
+    width:100%;
+    height:auto;
+    border-radius:10px;
+    margin-top:10px;
+}
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    color:#2d6a4f;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#000000;
+    line-height:1.5;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- BARRA SUPERIOR -->
+<div class="navbar">
+    <div class="logo">
+        <img src="../fotos/AGRO MULTI original (1).png">
+        Bem vindo ao AgroMulti
+    </div>
+</div>
+
+    
+<div class="container">
+
+     <!-- CARROSSEL -->
+    <div class="carousel">
+        <button class="btn prev">&#8249;</button>
+        <img id="imagem" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef">
+        <button class="btn next">&#8250;</button>
+    </div>
+ <!-- CARDS GRANDES -->
+    <div class="cards">
+
+        <div class="card">
+            <h3>🌱🐄 O que oferecemos </h3>
+            <p>
+                Este site é voltado para auxiliar agricultores na gestão financeira, permitindo um maior
+                controle sobre suas finanças e contribuindo para uma melhor organização de seu dinheiro.
+            </p>
+        </div>
+
+        <!-- CARDS GRANDES -->
+        <div class="card">
+            <h3> Controle total da produção 💰</h3>
+            <p>
+                Com o AgroMulti, você consegue acompanhar gastos, lucros e investimentos de forma simples,
+                ajudando na tomada de decisões e no crescimento do seu negócio. 
+                Visualize relatórios e melhore seu planejamento com dados claros.
+                E o melhor: tudo isso de forma simples e totalmente gratuita.
+            </p>
+        </div>
+
+         <!--  <div class="card">
+            <h3>📊 Decisões inteligentes para o futuro </h3>
+            <p>
+                Visualize relatórios e melhore seu planejamento com dados claros.
+                E o melhor: tudo isso de forma simples e totalmente gratuita.
+            </p>
+        </div>
+ -->
+       
+        <div class="card">
+            <h3>📊Como se cadastrar no site</h3>
+            <p>
+                Para se cadastrar no nosso site, você só vai precisar de um e-mail e criar uma senha. <br>
+                 Se você não sabe o seu e-mail, não se preocupe. É fácil descobrir. <br>
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Como se cadastrar no site</h3>
+            <p>
+            1. Vá até o Google no seu celular.<br>
+            2. No canto superior direito, clique na bolinha com a inicial do seu nome.<br>
+            3. Depois, clique em "Trocar de conta".<br>
+            4. Seu e-mail vai aparecer na tela. Anote ele.
+        </div>
+
+        <div class="card">
+            <h3>Como se cadastrar no site</h3>
+            <p>
+            Agora volte para a tela de cadastro do AgroMulti: <br>
+            5. Digite seu e-mail.<br>
+            6. Crie uma senha fácil de lembrar.<br>
+            7. Clique em cadastrar. <br>
+             Pronto! Agora você já pode usar o AgroMulti e aproveitar todos os serviços.
+        </p>
+
+    </div>
+    <div class="card">
+            <h3>Exemplo prático</h3>
+            
+                <img src="../fotos/Como descobrir seu e-mail no Google.png" alt="">
+    
+        </div>
+
+</div>
+
+<script>
+let imagens = [
+"https://images.unsplash.com/photo-1500382017468-9049fed747ef",
+"https://images.unsplash.com/photo-1501004318641-b39e6451bec6",
+"https://images.unsplash.com/photo-1492496913980-501348b61469",
+"../fotos/"
+];
+
+let index = 0;
+let img = document.getElementById("imagem");
+
+/* FUNÇÕES */
+function proximaImagem(){
+    index = (index + 1) % imagens.length;
+    img.src = imagens[index];
+}
+
+function imagemAnterior(){
+    index = (index - 1 + imagens.length) % imagens.length;
+    img.src = imagens[index];
+}
+
+/* BOTÕES */
+document.querySelector(".next").onclick = proximaImagem;
+document.querySelector(".prev").onclick = imagemAnterior;
+
+/* AUTO (PASSAR SOZINHO) */
+let auto = setInterval(proximaImagem, 3000);
+
+/* PAUSAR QUANDO PASSAR O MOUSE */
+let carousel = document.querySelector(".carousel");
+
+carousel.addEventListener("mouseover", () => {
+    clearInterval(auto);
+});
+
+carousel.addEventListener("mouseout", () => {
+    auto = setInterval(proximaImagem, 3000);
+});
+
+</script>
+
+</body>
+</html>

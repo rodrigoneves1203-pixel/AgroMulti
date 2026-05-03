@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgroMulti</title>
+
+<link rel="stylesheet" href="../css/ciclo.css">
+<link rel="stylesheet" href="../css/padrão.css">
+<link rel="stylesheet" href="../css/acessibilidade.css">
+<link rel="stylesheet" href="../css/responsividade.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="icon"
+href="../fotos/Logo Agro Multi digital em formato favicon.png"
+type="image/png">
+
+</head>
+
+<body>
+
+
+<!-- CONTEÚDO -->
+<main class="main">
+
+<button class="btn-voltar" onclick="window.location.href = 'principal.html'">
+<i class="fa-solid fa-arrow-left"></i>
+<span>Voltar</span>
+</button>
+
+<div class="titulo-flex">
+
+<div class="titulos-texto"></div>
+
+<div class="card-explicativo container-fluid">
+
+<h5 class="d-flex align-items-center gap-2">
+<i class="fa-solid fa-circle-info" id="b"></i>
+<span id="a">O que é um ciclo de produção?</span>
+</h5>
+<hr>
+<p>
+O ciclo de produção reúne todas as etapas do cultivo, desde o plantio até a colheita.
+Aqui você pode acompanhar prazos, registrar atividades e organizar melhor sua produção.
+</p>
+
+</div>
+
+</div>
+
+<hr>
+
+<ol id="lista_ciclos" class="lista-ciclos"></ol>
+
+</main>
+
+
+<button class="add-button d-flex align-items-center gap-2"
+onclick="window.location.href='criar_ciclo.html'">
+
+<i class="fa-solid fa-plus"></i>
+<span>Adicionar Ciclo</span>
+
+</button>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="../script/script_ciclo.js"></script>
+
+<script>
+
+const toggleBtn = document.querySelector(".menu-toggle")
+const sidebar = document.querySelector(".sidebar")
+
+toggleBtn.addEventListener("click", () => {
+sidebar.classList.toggle("active")
+})
+
+</script>
+
+
+<!-- SCRIPT PADRÃO DE ACESSIBILIDADE (INJEÇÃO) -->
+<script src="../script/script-acessibilidade/injetar-acessibilidade.js"></script>
+<script src="../script/top_bar/padrao.js"></script>
+</body>
+</html>

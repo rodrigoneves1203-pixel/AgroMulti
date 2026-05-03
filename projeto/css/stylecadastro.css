@@ -1,0 +1,158 @@
+body{
+font-family: Arial, Helvetica, sans-serif;
+background:#f5f5f5;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+
+}
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-image:url("../fotos/fundoindex.jpg");
+background-repeat: no-repeat;
+background-size:cover;
+background-position:center;
+background-attachment: fixed;
+filter:blur(2px);
+z-index:-1;
+}
+.container{
+    
+background:white;
+padding:40px;
+width:350px;
+
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+text-align:center;
+border-radius: 30px;
+}
+
+.logo{
+width: 200px;
+    height: auto;
+display:block;
+margin:auto;
+margin-bottom:10px;
+}
+
+h1{
+margin-bottom:10px;
+color:#555;
+}
+
+label{
+display:block;
+text-align:left;
+margin-top:10px;
+color:#555;
+}
+input{
+width:100%;
+padding:10px;
+margin-top:5px;
+border:1px solid #ccc;
+border-radius:3px;
+box-sizing:border-box;
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:20px;
+background:#2e7d32 ;
+color:white;
+border:none;
+cursor:pointer;
+font-size:16px;
+border-radius: 30px;
+}
+
+button:hover{
+background:#3c554d;
+}
+
+.links{
+margin-top:15px;
+font-size:14px;
+}
+
+.links a{
+color:#4e6f63;
+text-decoration:none;
+font-weight:bold;
+}
+.campo-senha{
+    position: relative;
+    width: 100%;
+}
+
+.campo-senha input{
+    padding-right: 40px; /* espaço pro olho */
+}
+
+.campo-senha i{
+    position: absolute;
+    right: 10px;
+    top: 60%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #555;
+    font-size: 18px;
+    z-index: 2;
+}
+
+
+/* BOTÃO */
+.btn-voltar {
+
+position:absolute;
+width: 100px;
+top:10px;
+left:20px;
+
+padding:10px 16px;
+
+font-size:14px;
+font-weight:500;
+
+background:linear-gradient(135deg,#119258,#1f6b3b);
+
+color:white;
+
+border:none;
+
+border-radius:25px;
+
+cursor:pointer;
+
+box-shadow:0 4px 10px rgba(0,0,0,0.25);
+
+transition:0.25s;
+
+}
+
+/* HOVER */
+
+.btn-voltar:hover{
+
+background:linear-gradient(135deg,#1f6b3b,#2faa6d);
+
+transform:translateY(-2px);
+
+box-shadow:0 6px 15px rgba(0,0,0,0.35);
+
+}
+
+/* CLICK */
+
+.btn-voltar:active{
+
+transform:scale(0.95);
+
+}

@@ -1,0 +1,115 @@
+/* FUNDO */
+body{
+margin:0;
+font-family:Arial, sans-serif;
+}
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+
+background-image:url("../fotos/paginicial.jpeg");
+background-repeat:no-repeat;
+background-size:cover;
+background-position:center;
+
+filter:blur(2px);
+z-index:-1;
+}
+
+/* CONTEÚDO PRINCIPAL */
+.main{
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:40px;
+}
+
+/* CONTAINER DOS BOTÕES */
+.botoes-inicio{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+
+max-width:850px;
+}
+
+/* BOTÕES */
+.botoes-inicio button{
+width:250px;
+height:140px;
+
+border:none;
+border-radius:25px;
+
+background:linear-gradient(135deg,#ffffff,#f4ede4);
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+gap:12px;
+
+font-size:17px;
+font-weight:600;
+color:#1F5E3B;
+
+cursor:pointer;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+transition:all 0.3s ease;
+position:relative;
+overflow:hidden;
+}
+
+/* ÍCONES */
+.botoes-inicio button i{
+font-size:28px;
+transition:0.3s;
+}
+
+/* HOVER */
+.botoes-inicio button:hover{
+background:linear-gradient(135deg,#f2c84c80,#f7d674b6);
+transform:translateY(-6px) scale(1.04);
+box-shadow:0 15px 30px rgba(0,0,0,0.25);
+}
+
+/* ANIMAÇÃO DO ÍCONE */
+.botoes-inicio button:hover i{
+transform:scale(1.2) rotate(5deg);
+}
+
+/* CLICK */
+.botoes-inicio button:active{
+transform:scale(0.97);
+}
+
+/* EFEITO RIPPLE */
+.botoes-inicio button::after{
+content:"";
+position:absolute;
+width:0;
+height:0;
+border-radius:50%;
+background:rgba(255,255,255,0.6);
+
+top:50%;
+left:50%;
+
+transform:translate(-50%,-50%);
+opacity:0;
+}
+
+.botoes-inicio button:active::after{
+width:300px;
+height:300px;
+opacity:1;
+transition:0.4s;
+}

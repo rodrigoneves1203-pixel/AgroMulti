@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Configurar Gasto</title>
+<link rel="stylesheet" href="../css/padrão.css">
+<link rel="stylesheet" href="../css/configurar_gasto.css">
+<link rel="stylesheet" href="../css/acessibilidade.css">
+
+<link rel="icon"
+href="../fotos/Logo Agro Multi digital em formato favicon.png"
+type="image/png">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<button class="btn-voltar"
+onclick="voltar()"
+aria-label="Voltar para a página anterior">
+
+<span>← Voltar</span>
+
+</button>
+
+<main>
+
+<img src="../fotos/AGRO MULTI original (1).png"
+class="logo"
+alt="Logo da Agro Multi">
+
+<h1>Editar Gasto</h1>
+
+<p>
+Escolha o campo que deseja atualizar
+</p>
+
+<label for="campo">
+Campo que deseja alterar
+</label>
+
+<select id="campo"
+onchange="mostrarCampo()"
+aria-label="Selecionar campo para editar">
+
+<option value="">Selecione</option>
+<option value="nome_gasto">Nome</option>
+<option value="valor">Valor</option>
+<option value="data_inicio">Data</option>
+<option value="descricao_gasto">Descrição</option>
+
+</select>
+
+<div id="area-input"
+aria-live="polite">
+
+</div>
+
+<button class="bt"
+onclick="atualizar()"
+aria-label="Salvar alteração do gasto">
+
+<span>Salvar Alteração</span>
+
+</button>
+
+</main>
+
+<script src="../script/configurar_gasto.js"></script>
+
+<!-- SCRIPT GLOBAL DE ACESSIBILIDADE -->
+<script src="../script/top_bar/padrao.js"></script>
+<script src="../script/script-acessibilidade/injetar-acessibilidade.js"></script>
+
+</body>
+</html>

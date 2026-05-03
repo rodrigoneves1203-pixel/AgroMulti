@@ -1,0 +1,189 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* BODY */
+body {
+    background: linear-gradient(135deg, #3fc4c4, #66bb6a);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CONTAINER */
+main {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 400px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+/* TÍTULOS */
+h1 {
+    margin-bottom: 10px;
+    color: #2e7d32;
+}
+
+h2 {
+    margin-top: 30px;
+    color: #2e7d32;
+}
+
+/* LISTA */
+ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+/* CARD (LI) */
+li {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-left: 7px solid #2e7d32;
+     border-top: 7px solid #2e7d32;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: 0.2s;
+}
+
+li:hover {
+    transform: translateY(-2px);
+}
+
+li:active {
+    transform: scale(0.98);
+}
+
+/* LADO ESQUERDO */
+.ciclo-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.nome {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+.data {
+    font-size: 12px;
+    color: #777;
+}
+
+.descricao {
+    font-size: 13px;
+    color: #444;
+}
+
+/* LADO DIREITO */
+.lado-direito {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+}
+
+.valor {
+    font-weight: bold;
+    font-size: 15px;
+    color: #1b5e20;
+}
+
+/* BOTÕES */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 5px;
+    border: none;
+    border-radius: 8px;
+    background: #2e7d32;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #1b5e20;
+}
+
+/* BOTÃO DENTRO DO LI */
+li button {
+    width: auto;
+    padding: 6px 10px;
+    font-size: 12px;
+    background: #c62828;
+}
+
+li button:hover {
+    background: #8e0000;
+}
+
+/* BOTÃO VOLTAR */
+
+.logo {
+    width: 140px;
+    margin-bottom: 5px;
+}
+.btn-voltar {
+
+position:absolute;
+
+top:20px;
+left:20px;
+
+padding:10px 16px;
+
+font-size:14px;
+font-weight:500;
+
+background:linear-gradient(135deg,#119258,#1f6b3b);
+
+color:white;
+
+border:none;
+
+border-radius:25px;
+
+cursor:pointer;
+
+box-shadow:0 4px 10px rgba(0,0,0,0.25);
+
+transition:0.25s;
+
+}
+
+/* HOVER */
+
+.btn-voltar:hover{
+
+background:linear-gradient(135deg,#1f6b3b,#2faa6d);
+
+transform:translateY(-2px);
+
+box-shadow:0 6px 15px rgba(0,0,0,0.35);
+
+}
+
+/* CLICK */
+
+.btn-voltar:active{
+
+transform:scale(0.95);
+
+}

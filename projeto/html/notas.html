@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Notas</title>
+<link rel="stylesheet" href="../css/responsividade.css">
+<link rel="stylesheet" href="../css/acessibilidade.css">
+<link rel="stylesheet" href="../css/padrão.css">
+  <link rel="stylesheet" href="../css/notas.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+</head>
+
+
+<body>
+
+
+
+<header>
+     <button class="btn-voltar" onclick="window.history.back()">
+         <i class="fa-solid fa-arrow-left"></i>
+      Voltar
+    </button>
+
+</header>
+
+
+
+
+
+
+<main id="listaNotas"></main>
+
+
+
+
+
+
+<!-- MODAL -->
+<div id="modal" class="modal hidden">
+  <div class="modal-box">
+
+
+    <!-- TOPO -->
+    <div class="modal-header">
+      <h2>Nova Nota</h2>
+      <i class="fa-solid fa-xmark fechar"></i>
+    </div>
+
+
+    <hr>
+
+
+    <!-- CAMPOS -->
+    <label>TÍTULO</label>
+    <input id="titulo" type="text" placeholder="digite o titulo ">
+
+
+    <label>CONTEÚDO</label>
+    <textarea id="texto" placeholder="Escreva sua nota"></textarea>
+
+    <!-- BOTÕES -->
+    <div class="botoes">
+      <button id="cancelar">Cancelar</button>
+      <button id="salvar">Salvar</button>
+    </div>
+
+
+  </div>
+</div>
+
+
+<button id="btnNova" class="add-button">
+  <i class="fa-solid fa-plus"></i>NOVA NOTA
+</button>
+<script src="../script/script-acessibilidade/injetar-acessibilidade.js"></script>
+
+<script src="../script/notas.js"></script>
+<script src="../script/top_bar/padrao.js"></script>
+</body>
+</html>

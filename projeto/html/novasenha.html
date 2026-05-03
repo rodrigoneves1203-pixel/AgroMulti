@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Redefinir Senha</title>
+    <link rel="stylesheet" href="../css/novasenha.css">
+    <link rel="icon" href="../fotos/Logo Agro Multi digital em formato favicon.png"  type="image/png" >
+</head>
+
+<body>
+
+    <a href="index.html" class="btn-voltar"> <i class="fa-solid fa-arrow-left"></i>
+      Voltar</a>
+
+    <div class="container">
+        <h2>Redefinir Senha</h2>
+
+        <form action="http://localhost:3000/nova-senha" method="POST">
+
+            <img src="../fotos/AGRO MULTI original (1).png" alt="Logo" class="logo">
+
+            
+            <input type="hidden" name="token" id="token">
+
+            <label>Nova Senha</label>
+            <div class="password-container">
+                <input 
+                    type="password" 
+                    name="senha" 
+                    id="senhaInput" 
+                    placeholder="Digite sua nova senha" 
+                    required
+                >
+            </div>
+
+            <button type="submit">Salvar nova senha</button>
+
+        </form>
+    </div>
+
+    <script>
+        // pega o token da URL
+        const params = new URLSearchParams(window.location.search);
+        const token = params.get("token");
+
+        if (!token) {
+            alert("Token inválido ou ausente!");
+            window.location.href = "index.html";
+        }
+
+        document.getElementById("token").value = token;
+    </script>
+
+</body>
+</html>

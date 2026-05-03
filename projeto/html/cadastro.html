@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cadastro - AgroMulti</title>
+<link rel="stylesheet" href="../css/stylecadastro.css">
+<link rel="icon" href="../fotos/Logo Agro Multi digital em formato favicon.png"  type="image/png" >
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <button class="btn-voltar" onclick="history.back()">
+<i class="fa-solid fa-arrow-left"></i>
+<span>Voltar</span>
+</button>
+
+<div class="container">
+
+<img src="../fotos/AGRO MULTI original (1).png" class="logo">
+
+<h1>CADASTRO</h1>
+
+<form action="http://localhost:3000/cadastro" method="POST">
+
+<label>Nome</label>
+<input type="text" name="nome" placeholder="Digite seu nome" required>
+
+<label>Email</label>
+<input type="email" name="email" placeholder="Digite seu email" required>
+
+<label>Senha</label>
+
+<div class="campo-senha">
+    <input 
+        type="password" 
+        id="senha"
+        name="senha" 
+        placeholder="Digite sua senha"
+        minlength="8"
+        required
+    >
+
+    <i class="fa-solid fa-eye" id="toggleSenha"></i>
+</div>
+<div id="mensagem_erro"></div>
+<button type="submit">Cadastrar</button>
+
+<p class="links">
+Já tem conta? 
+<a href="index.html">ENTRAR</a>
+</p>
+
+</form>
+
+</div>
+<script>
+const form = document.querySelector("form");
+const senha = document.getElementById("senha");
+const erro = document.getElementById("mensagem_erro");
+
+form.addEventListener("submit", function(e){
+
+    if(senha.value.length < 8){
+        e.preventDefault();
+        erro.innerText = "A senha precisa ter pelo menos 8 caracteres.";
+        erro.style.color = "red";
+    }
+
+});
+</script>
+<script>
+const senha2 = document.getElementById("senha");
+const olho = document.getElementById("toggleSenha");
+
+olho.addEventListener("click", function(){
+
+    if(senha2.type === "password"){
+        senha2.type = "text";
+        olho.classList.remove("fa-eye");
+        olho.classList.add("fa-eye-slash");
+    } else {
+        senha2.type = "password";
+        olho.classList.remove("fa-eye-slash");
+        olho.classList.add("fa-eye");
+    }
+
+});
+</script>
+</body>
+</html>

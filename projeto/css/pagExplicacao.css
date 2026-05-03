@@ -1,0 +1,117 @@
+/* FUNDO */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #F4EDE4, #E3F2FD);
+
+    display: flex;
+    flex-direction: column; /* IMPORTANTE */
+    align-items: center;
+}
+.logo{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 150px;
+     display: block;
+   
+
+}
+
+
+/* CONTAINER */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 900px;
+    width: 100%;
+    padding: 40px;
+}
+
+/* TEXTO */
+.texto {
+    max-width: 420px;
+}
+
+/* TÍTULOS */
+h1, h2, h3 {
+    margin: 0;
+}
+
+h2 {
+    color: #08b550;
+    font-size: 30px;
+}
+
+h3 {
+    color: #0c9444;
+    font-size: 20px;
+}
+
+h1 {
+    color: #119a4a;
+    font-size: 42px;
+}
+
+/* PARÁGRAFO */
+p {
+    margin-top: 20px;
+    padding: 15px;
+
+    background: #e8f5e9;
+    border-radius: 8px;
+    border-left: 5px solid #27ae60;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* IMAGEM */
+.card-imagem {
+    width: 400px;
+
+    padding: 10px;
+    background: #fff;
+    border-radius: 15px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.card-imagem img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 700px){
+
+.container{
+    flex-direction: column;
+    text-align: center;
+}
+
+.card-imagem{
+    margin-top: 30px;
+}
+
+}
+
+/* BOTÃO VOLTAR */
+.btn-pular{
+    position: fixed;
+    bottom: 20px; /* joga pra baixo */
+    right: 20px;  /* joga pra direita */
+
+    background:#2D9CDB;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:0px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn-pular:hover{
+    background:#1F5E3B;
+}
