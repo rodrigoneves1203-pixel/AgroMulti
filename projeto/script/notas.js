@@ -41,13 +41,13 @@ document.getElementById("salvar").addEventListener("click", async () => {
 
 
   if (editandoId) {
-    await fetch(`http://localhost:3000/notas/${editandoId}`, {
+    await fetch(`https://agromulti.onrender.com/${editandoId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ titulo, texto })
     });
   } else {
-    await fetch(`http://localhost:3000/notas/${id_usuario}`, {
+    await fetch(`https://agromulti.onrender.com/${id_usuario}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ titulo, texto })

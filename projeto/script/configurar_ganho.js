@@ -64,7 +64,7 @@ async function atualizar() {
         alert("Preencha os dados!");
         return;
     }
-    const response = await fetch(`http://localhost:3000/receita/${id_ganho}/${campo}`, {
+    const response = await fetch(`https://agromulti.onrender.com/receita/${id_ganho}/${campo}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
