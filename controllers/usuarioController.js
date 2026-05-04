@@ -49,7 +49,8 @@ exports.login = async (req, res) => {
 // cadastro
 exports.cadastro = async (req, res) => {
   const { nome, email, senha } = req.body;
-
+ console.log("EMAIL_USER:", process.env.EMAIL_USER);
+console.log("EMAIL_PASS:", process.env.EMAIL_PASS ? "OK" : "NÃO VEIO");
   try {
     const usuarioExistente = await usuarioModel.buscarPorEmail(email);
 
@@ -64,7 +65,8 @@ exports.cadastro = async (req, res) => {
 
     const senhaHash = await bcrypt.hash(senha, 10);
     const tokenConfirmacao = crypto.randomBytes(20).toString("hex");
-
+    console.log("EMAIL_USER:", process.env.EMAIL_USER);
+console.log("EMAIL_PASS:", process.env.EMAIL_PASS ? "OK" : "NÃO VEIO");
     await usuarioModel.criar(nome, email, senhaHash, tokenConfirmacao);
 
     const transporter = nodemailer.createTransport({
@@ -90,7 +92,7 @@ exports.cadastro = async (req, res) => {
     res.send(`
       <script>
       alert("Cadastro realizado! Verifique seu email.");
-      window.location.href='../html/index.html';
+      window.location.href='html/index.html';
       </script>
     `);
 
