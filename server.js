@@ -28,7 +28,7 @@ app.use("/", rotas_gestao);
 app.use("/", rota_ciclo);
 app.use("/", rota_usuario);
 app.use("/", rotas_notas);
-
+app.set("trust proxy", 1);
 // PORT (IMPORTANTE)
 const PORT = process.env.PORT || 3000;
 
