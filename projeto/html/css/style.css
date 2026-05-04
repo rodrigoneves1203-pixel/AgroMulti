@@ -272,7 +272,7 @@ position:absolute;
 width: auto;
 top:20px;
 left:20px;
-
+z-index: 600;
 padding:10px 16px;
 width:100px;
 font-size:14px;

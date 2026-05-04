@@ -440,7 +440,7 @@ a{
 }
 @media (max-width: 768px){
     .faq{
-        margin-top: 60px;
+               margin-top: 60%;
     }
 
     .cards{
