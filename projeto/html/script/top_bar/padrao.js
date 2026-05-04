@@ -98,7 +98,7 @@ aria-label="Anotções">
 </li>
 
 <li>
-<button onclick="window.location.href='Perfil.html'" class="d-flex align-items-center gap-2">
+<button onclick="window.location.href='perfil.html'" class="d-flex align-items-center gap-2">
 <i class="fa-solid fa-user"></i>
 <span>Perfil</span>
 </button>
