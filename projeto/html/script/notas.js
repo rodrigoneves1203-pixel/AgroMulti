@@ -69,7 +69,7 @@ async function carregarNotas() {
   const id_usuario = localStorage.getItem("id_usuario");
 
 
-  const res = await fetch(`http://localhost:3000/notas/${id_usuario}`);
+  const res = await fetch(`https://agromulti.onrender.com/notas/${id_usuario}`);
   const notas = await res.json();
 
 
