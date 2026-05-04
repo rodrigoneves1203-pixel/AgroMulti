@@ -4,7 +4,8 @@ const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 const nodemailer = require('nodemailer');
 const BASE_URL = "https://agromulti.onrender.com";
-
+const { Resend } = require("resend");
+const resend = new Resend(process.env.RESEND_API_KEY);
 // login
 exports.login = async (req, res) => {
   const { email, senha } = req.body;
@@ -45,7 +46,6 @@ exports.login = async (req, res) => {
     res.status(500).json({ erro: "Erro no servidor" });
   }
 };
-
 // cadastro
 exports.cadastro = async (req, res) => {
   const { nome, email, senha } = req.body;
@@ -64,45 +64,37 @@ exports.cadastro = async (req, res) => {
 
     const senhaHash = await bcrypt.hash(senha, 10);
     const tokenConfirmacao = crypto.randomBytes(20).toString("hex");
-    console.log("EMAIL_USER:", process.env.EMAIL_USER);
-console.log("EMAIL_PASS:", process.env.EMAIL_PASS ? "OK" : "NÃO VEIO");
-    await usuarioModel.criar(nome, email, senhaHash, tokenConfirmacao);
 
-const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
-  secure: true,
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
-  }
-});
+    await usuarioModel.criar(nome, email, senhaHash, tokenConfirmacao);
 
     const link = `${BASE_URL}/confirmar-email?token=${tokenConfirmacao}`;
 
-    await transporter.sendMail({
-      from: `AgroMulti  <${process.env.EMAIL_USER}>`,
+    // ✅ ENVIO COM RESEND
+    const response = await resend.emails.send({
+      from: process.env.EMAIL_FROM,
       to: email,
       subject: "Confirme seu email",
       html: `
+        <h2>AgroMulti 🌱</h2>
         <p>Clique no link para confirmar seu cadastro:</p>
         <a href="${link}">${link}</a>
       `
     });
 
+    console.log("EMAIL ENVIADO:", response);
+
     res.send(`
       <script>
       alert("Cadastro realizado! Verifique seu email.");
-      window.location.href='html/index.html';
+      window.location.href='../html/index.html';
       </script>
     `);
 
   } catch (erro) {
-    console.log(erro);
+    console.log("ERRO NO CADASTRO:", erro);
     res.status(500).send("Erro ao cadastrar usuário");
   }
 };
-
 // confirmar email
 exports.confirmar = async (req, res) => {
   try {
