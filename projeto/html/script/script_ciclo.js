@@ -78,9 +78,9 @@ async function adicionarCiclo() {
     const data_inicio = document.getElementById("data_inicio").value;
     const tipo = document.getElementById("tipo").value;
     const imagens = {
-agricultura: "fotos/agricultura.png",
-pecuaria: "fotos/pecuaria.png",
-agropecuaria: "fotos/agropecuaria.png"
+agricultura: "html/fotos/agricultura.png",
+pecuaria: "html/fotos/pecuaria.png",
+agropecuaria: "html/fotos/agropecuaria.png"
 };
 
 const imagem = imagens[tipo];
