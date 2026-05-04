@@ -17,6 +17,7 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("projeto"));
+app.use('/fotos', express.static('fotos'));
 
 // ROTAS
 const rota_ciclo = require("./routes/ciclosRoutes");
