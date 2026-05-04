@@ -41,13 +41,13 @@ document.getElementById("salvar").addEventListener("click", async () => {
 
 
   if (editandoId) {
-    await fetch(`https://agromulti.onrender.com/${editandoId}`, {
+    await fetch(`https://agromulti.onrender.com/notas/${editandoId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ titulo, texto })
     });
   } else {
-    await fetch(`https://agromulti.onrender.com/${id_usuario}`, {
+    await fetch(`https://agromulti.onrender.com/notas/${id_usuario}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ titulo, texto })
@@ -154,7 +154,7 @@ function editar(id, titulo, texto) {
 
 
 async function deletar(id) {
-  await fetch(`http://localhost:3000/notas/${id}`, {
+  await fetch(`https://agromulti.onrender.com/notas/${id}`, {
     method: "DELETE"
   });
 
