@@ -71,14 +71,10 @@ exports.cadastro = async (req, res) => {
 
     // ✅ ENVIO COM RESEND
     const response = await resend.emails.send({
-      from: process.env.EMAIL_FROM,
-      to: email,
-      subject: "Confirme seu email",
-      html: `
-        <h2>AgroMulti 🌱</h2>
-        <p>Clique no link para confirmar seu cadastro:</p>
-        <a href="${link}">${link}</a>
-      `
+       from: "onboarding@resend.dev", // 👈 remetente (Resend)
+  to: email,                     // 👈 usuário do seu sistema
+  subject: "Confirme seu email",
+  html: `<a href="${link}">Confirmar</a>`
     });
 
     console.log("EMAIL ENVIADO:", response);
