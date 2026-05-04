@@ -18,7 +18,7 @@ async function adicionarGasto() {
     const valor = parseFloat(valorInput.replace(",", "."));
 
     try {
-        const result = await fetch(`https://agromulti.onrender.com/gastos/${id_ciclo}`, {
+        const result = await fetch(`https://agromulti.onrender.com/adicionar/gastos/${id_ciclo}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
