@@ -78,7 +78,7 @@ exports.cadastro = async (req, res) => {
     const link = `${BASE_URL}/confirmar-email?token=${tokenConfirmacao}`;
 
     await transporter.sendMail({
-      from: "AgroMulti",
+      from: `AgroMulti  <${process.env.EMAIL_USER}>`,
       to: email,
       subject: "Confirme seu email",
       html: `
