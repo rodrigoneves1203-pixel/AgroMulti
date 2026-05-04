@@ -49,8 +49,7 @@ exports.login = async (req, res) => {
 // cadastro
 exports.cadastro = async (req, res) => {
   const { nome, email, senha } = req.body;
- console.log("EMAIL_USER:", process.env.EMAIL_USER);
-console.log("EMAIL_PASS:", process.env.EMAIL_PASS ? "OK" : "NÃO VEIO");
+
   try {
     const usuarioExistente = await usuarioModel.buscarPorEmail(email);
 
@@ -69,13 +68,15 @@ console.log("EMAIL_PASS:", process.env.EMAIL_PASS ? "OK" : "NÃO VEIO");
 console.log("EMAIL_PASS:", process.env.EMAIL_PASS ? "OK" : "NÃO VEIO");
     await usuarioModel.criar(nome, email, senhaHash, tokenConfirmacao);
 
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-      }
-    });
+const transporter = nodemailer.createTransport({
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
+  }
+});
 
     const link = `${BASE_URL}/confirmar-email?token=${tokenConfirmacao}`;
 

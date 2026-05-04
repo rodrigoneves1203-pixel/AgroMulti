@@ -112,7 +112,8 @@ i{
 <script src="script/login.js"></script>
 
 <script>
-
+ console.log("EMAIL_USER:", process.env.EMAIL_USER);
+console.log("EMAIL_PASS:", process.env.EMAIL_PASS ? "OK" : "NÃO VEIO");
 /* OLHO DA SENHA */
 
 const senha = document.getElementById("senha");
