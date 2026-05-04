@@ -67,21 +67,11 @@ exports.cadastro = async (req, res) => {
 
     await usuarioModel.criar(nome, email, senhaHash, tokenConfirmacao);
 
-    const link = `${BASE_URL}/confirmar-email?token=${tokenConfirmacao}`;
-
-    // ✅ ENVIO COM RESEND
-    const response = await resend.emails.send({
-       from: "onboarding@resend.dev", // 👈 remetente (Resend)
-  to: email,                     // 👈 usuário do seu sistema
-  subject: "Confirme seu email",
-  html: `<a href="${link}">Confirmar</a>`
-    });
-
-    console.log("EMAIL ENVIADO:", response);
+    await usuarioModel.comfirmarEmail(tokenConfirmacao);
 
     res.send(`
       <script>
-      alert("Cadastro realizado! Verifique seu email.");
+      alert("Cadastro realizado!");
       window.location.href='../html/index.html';
       </script>
     `);
