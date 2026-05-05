@@ -5,12 +5,6 @@ form.addEventListener("submit", async function (event) {
 
     const email = document.querySelector('input[name="email"]').value;
     const senha = document.querySelector('input[name="senha"]').value;
-    const naoRobo = document.getElementById("naoRobo").checked;
-
-if (!naoRobo) {
-    alert("Confirme que você não é um robô!");
-    return;
-}
 
     try {
         const response = await fetch("https://agromulti.onrender.com/login", {
