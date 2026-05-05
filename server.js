@@ -4,7 +4,13 @@ require("dotenv").config();
 const rateLimit = require("express-rate-limit");
 
 const app = express();
+const MANUTENCAO = true;
 
+if (MANUTENCAO) {
+  app.use((req, res) => {
+    return res.status(503).send("Sistema em manutenção");
+  });
+}
 app.use(rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 1000
