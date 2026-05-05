@@ -1,4 +1,10 @@
 {
+  "name": "agromulti",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "bcrypt": "^6.0.0",
     "body-parser": "^2.2.2",
@@ -8,7 +14,6 @@
     "express-rate-limit": "^8.3.2",
     "jsonwebtoken": "^9.0.3",
     "nodemailer": "^8.0.5",
-    "pg": "^8.20.0",
-    "resend": "^6.12.2"
+    "pg": "^8.20.0"
   }
 }
