@@ -4,8 +4,7 @@ const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 const nodemailer = require('nodemailer');
 const BASE_URL = "https://agromulti.onrender.com";
-const { Resend } = require("resend");
-const resend = new Resend(process.env.RESEND_API_KEY);
+
 // login
 exports.login = async (req, res) => {
   const { email, senha } = req.body;
