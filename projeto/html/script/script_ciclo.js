@@ -7,7 +7,7 @@ function formatarData(data) {
 const id_usuario = localStorage.getItem("id_usuario");
 async function listarCiclos() {
 
-    const response = await fetch(`https://agromulti.onrender.com/ciclo`,{
+    const response = await fetch(`https://agromulti-2.onrender.com/ciclo`,{
  headers:{
    Authorization: "Bearer " + token
  }
@@ -78,13 +78,13 @@ async function adicionarCiclo() {
     const data_inicio = document.getElementById("data_inicio").value;
     const tipo = document.getElementById("tipo").value;
     const imagens = {
-agricultura: "https://agromulti.onrender.com/html/fotos/agricultura.png",
-pecuaria: "https://agromulti.onrender.com/html/fotos/pecuaria.png",
-agropecuaria: "https://agromulti.onrender.com/html/fotos/agropecuaria.png"
+agricultura: "https://agromulti-2.onrender.com/html/fotos/agricultura.png",
+pecuaria: "https://agromulti-2.onrender.com/html/fotos/pecuaria.png",
+agropecuaria: "https://agromulti-2.onrender.com/html/fotos/agropecuaria.png"
 };
 
 const imagem = imagens[tipo];
-    const response = await fetch(`https://agromulti.onrender.com/ciclo/${id_usuario}`, {
+    const response = await fetch(`https://agromulti-2.onrender.com/ciclo/${id_usuario}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

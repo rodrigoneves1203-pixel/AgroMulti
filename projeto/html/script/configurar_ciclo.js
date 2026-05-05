@@ -31,7 +31,7 @@ function irParaCriarGanho() {
 console.log("ID DO CICLO:", id_ciclo);
 
 async function listarGastos() {
-    const response = await fetch(`https://agromulti.onrender.com/gastos/${id_ciclo}`);
+    const response = await fetch(`https://agromulti-2.onrender.com/gastos/${id_ciclo}`);
     const dados = await response.json();
 
     const lista = document.getElementById("lista_gastos");
@@ -86,7 +86,7 @@ async function listarGastos() {
 
 }
 async function listarReceita() {
-    const result = await fetch(`https://agromulti.onrender.com/receita/${id_ciclo}`);
+    const result = await fetch(`https://agromulti-2.onrender.com/receita/${id_ciclo}`);
     const dados = await result.json();
     const listar = document.getElementById("lista_receitas");
     listar.innerHTML = "";
@@ -151,7 +151,7 @@ async function deletarGastos(event, id) {
     const confirmar = confirm("Tem certeza que deseja excluir esse gasto?");
     if (!confirmar) return;
 
-    await fetch(`https://agromulti.onrender.com/deletar/gastos/${id}`, {
+    await fetch(`https://agromulti-2.onrender.com/deletar/gastos/${id}`, {
         method: "DELETE"
     });
 
@@ -164,7 +164,7 @@ async function deletarReceitas( event, id) {
 
     if(!confirme) return;
 
-    const resut = await fetch(`https://agromulti.onrender.com/receita/deletar/${id}`,{
+    const resut = await fetch(`https://agromulti-2.onrender.com/receita/deletar/${id}`,{
     method: "DELETE"
  }
 )
@@ -183,7 +183,7 @@ async function deletarCiclo() {
 
     if (!confirmar) return;
 
-    const response = await fetch(`https://agromulti.onrender.com/ciclo/${id_ciclo}`, {
+    const response = await fetch(`https://agromulti-2.onrender.com/ciclo/${id_ciclo}`, {
         method: "DELETE"
     });
 
@@ -203,7 +203,7 @@ async function deletarCiclo() {
 
    const token = localStorage.getItem("token");
 
-const relatorio_nome = await fetch(`https://agromulti.onrender.com/ciclo/${id_usuario}`,{
+const relatorio_nome = await fetch(`https://agromulti-2.onrender.com/ciclo/${id_usuario}`,{
   headers: {
     Authorization: "Bearer " + token
   }
@@ -214,7 +214,7 @@ const relatorio_nome = await fetch(`https://agromulti.onrender.com/ciclo/${id_us
         if(nome_rela.id_ciclo == id_ciclo) nome_re = nome_rela.nome_ciclo;
     })
 
-const result = await fetch(`https://agromulti.onrender.com/encerrar-ciclo/${id_usuario}/${id_ciclo}`, {
+const result = await fetch(`https://agromulti-2.onrender.com/encerrar-ciclo/${id_usuario}/${id_ciclo}`, {
         method: "POST",
                 headers: {
             "Content-Type": "application/json"
@@ -236,7 +236,7 @@ const result = await fetch(`https://agromulti.onrender.com/encerrar-ciclo/${id_u
 };
 async function verificarCiclo() {
 
-    const response = await fetch(`https://agromulti.onrender.com/ciclo/`,{
+    const response = await fetch(`https://agromulti-2.onrender.com/ciclo/`,{
          headers:{
    Authorization: "Bearer " + token
  }}

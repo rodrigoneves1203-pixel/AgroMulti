@@ -17,7 +17,7 @@ const id_usuario = localStorage.getItem("id_usuario");
 
 async function listar() {
 
-    const result = await fetch(`https://agromulti.onrender.com/relatorios/${id_usuario}`);
+    const result = await fetch(`https://agromulti-2.onrender.com/relatorios/${id_usuario}`);
     const dados = await result.json();
     const lista = document.getElementById("lista_relatorios");
 
@@ -59,8 +59,8 @@ let grafico;
 
 async function gerarGrafico(id_ciclo){
 
-    const gastosRes = await fetch(`https://agromulti.onrender.com/gastos/${id_ciclo}`);
-    const receitasRes = await fetch(`https://agromulti.onrender.com/receita/${id_ciclo}`);
+    const gastosRes = await fetch(`https://agromulti-2.onrender.com/gastos/${id_ciclo}`);
+    const receitasRes = await fetch(`https://agromulti-2.onrender.com/receita/${id_ciclo}`);
 
     const gastos = await gastosRes.json();
     const receitas = await receitasRes.json();
@@ -109,7 +109,7 @@ function voltar() {
 
 async function atualizarciclo(id){
 
- await fetch(`https://agromulti.onrender.com/abrir-ciclo/${id}`,{
+ await fetch(`https://agromulti-2.onrender.com/abrir-ciclo/${id}`,{
    method:"PUT"
  })
 
@@ -121,7 +121,7 @@ async function removerRelatorio(id_relatorio, id_ciclo){
     const confirmar = confirm("Deseja remover este relatório?");
     if(!confirmar) return;
 
-    await fetch(`https://agromulti.onrender.com/relatorio/${id_relatorio}/${id_ciclo}`, {
+    await fetch(`https://agromulti-2.onrender.com/relatorio/${id_relatorio}/${id_ciclo}`, {
         method: "DELETE"
     });
 

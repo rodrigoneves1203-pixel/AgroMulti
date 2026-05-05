@@ -16,7 +16,7 @@ async function adicionarGanho() {
 
     // converte vírgula pra ponto
     const valor = parseFloat(valor_ganho.replace(",", "."));
-    const result = await fetch(`https://agromulti.onrender.com/adicionar/receita/${id_ciclo}`, {
+    const result = await fetch(`https://agromulti-2.onrender.com/adicionar/receita/${id_ciclo}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

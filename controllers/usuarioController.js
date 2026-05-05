@@ -135,56 +135,7 @@ exports.alterarSenha = async (req, res) => {
   }
 };
 
-// pedir senha
-exports.pedirSenha = async (req, res) => {
-  try {
-    const { email } = req.body;
 
-    const usuario = await usuarioModel.buscarPorEmail(email);
-    if (!usuario) {
-      return res.send(`
-        <script>
-        alert("Email não encontrado");
-        window.location.href = "/html/index.html";
-        </script>
-      `);
-    }
-
-    const token = crypto.randomBytes(20).toString("hex");
-    const expira = new Date(Date.now() + 3600000);
-
-    await usuarioModel.tokenRecuperaçao(token, expira, email);
-
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-      }
-    });
-
-    const link = `${BASE_URL}/html/novasenha.html?token=${token}`;
-
-    await transporter.sendMail({
-      from: "AgroMulti",
-      to: email,
-      subject: "Recuperação de senha",
-      html: `<p>Clique no link para redefinir sua senha:</p>
-             <a href="${link}">${link}</a>`
-    });
-
-    res.send(`
-      <script>
-      alert("Email enviado com sucesso!");
-      window.location.href = "/html/index.html";
-      </script>
-    `);
-
-  } catch (erro) {
-    console.log(erro);
-    res.status(500).send("Erro ao solicitar recuperação de senha");
-  }
-};
 
 // nova senha
 exports.novaSenha = async (req, res) => {

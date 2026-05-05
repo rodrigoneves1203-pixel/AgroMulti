@@ -17,7 +17,7 @@ const preview = document.getElementById("preview");
 //  carregar dados
 async function carregarDados() {
     try {
-        const res = await fetch(`https://agromulti.onrender.com/usuario/${id_usuario}`);
+        const res = await fetch(`https://agromulti-2.onrender.com/usuario/${id_usuario}`);
 
         if (!res.ok) {
             const texto = await res.text();
@@ -69,7 +69,7 @@ document.getElementById("salvar").addEventListener("click", async () => {
 
 
     try {
-        const res = await fetch(`https://agromulti.onrender.com/usuario/${id_usuario}`, {
+        const res = await fetch(`https://agromulti-2.onrender.com/usuario/${id_usuario}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -109,7 +109,7 @@ document.getElementById("excluir").addEventListener("click", async () => {
     if (!confirmar) return;
 
     try {
-        const res = await fetch(`https://agromulti.onrender.com/usuario/${id_usuario}`, {
+        const res = await fetch(`https://agromulti-2.onrender.com/usuario/${id_usuario}`, {
             method: "DELETE"
         });
 

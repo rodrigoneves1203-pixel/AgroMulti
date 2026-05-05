@@ -7,7 +7,7 @@ form.addEventListener("submit", async function (event) {
     const senha = document.querySelector('input[name="senha"]').value;
 
     try {
-        const response = await fetch("https://agromulti.onrender.com/login", {
+        const response = await fetch("https://agromulti-2.onrender.com/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
