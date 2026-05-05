@@ -4,7 +4,7 @@ require("dotenv").config();
 const rateLimit = require("express-rate-limit");
 
 const app = express();
-const MANUTENCAO = true;
+const MANUTENCAO = false;
 
 if (MANUTENCAO) {
   app.use((req, res) => {
