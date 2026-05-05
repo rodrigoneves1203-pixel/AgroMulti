@@ -3,59 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login - AgroMulti</title>
+
+<meta name="description" content="Sistema AgroMulti - plataforma de gestão agrícola para controle de produção, relatórios e monitoramento.">
 <meta name="google-site-verification" content="H8g9S6nt40MZKAk16ccdkd__s_GjuAr81DS00Gnk-QI" />
-<title>Login - Agromulti</title>
 
 <link rel="stylesheet" href="css/style.css">
-<link rel="icon" href="fotos/Logo Agro Multi digital em formato favicon.png" type="image/png">
+<link rel="icon" href="fotos/Logo Agro Multi digital em formato favicon.png">
 
-
-<!-- ICONES -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-
-/* CAMPO SENHA COM OLHO */
-.campo-senha{
-position:relative;
-width:100%;
+.campo-senha {
+  position: relative;
+  width: 100%;
 }
 
-.campo-senha input{
-width:100%;
-padding:10px;
-padding-right:40px;
-box-sizing:border-box;
+.campo-senha input {
+  width: 100%;
+  padding: 10px;
+  padding-right: 40px;
+  box-sizing: border-box;
 }
 
-.campo-senha i{
-position:absolute;
-right:10px;
-top:40%;
-transform:translateY(-50%);
-cursor:pointer;
-color:#555;
-font-size:18px;
-}
-i{
-  margin-right: 1px;
+.campo-senha i {
+  position: absolute;
+  right: 10px;
+  top: 40%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #555;
+  font-size: 18px;
 }
 
+.info-sistema {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.info-sistema h2 {
+  margin: 0;
+}
 </style>
-
 </head>
 
 <body>
-  <button class="btn-voltar" onclick="window.location.href = 'inicio.html'">
-<i class="fa-solid fa-arrow-left"></i>
-<span>Voltar</span>
-</button>
+
 <div class="container">
 
 <div class="login-box">
 
-<img src="fotos/AGRO MULTI original (1).png" class="logo" alt="logo">
-
+<!-- IDENTIDADE DO SISTEMA -->
+<div class="info-sistema">
+  <img src="fotos/AGRO MULTI original (1).png" class="logo" alt="AgroMulti Logo">
+  <h2>AgroMulti</h2>
+  <p>Sistema de gestão agrícola para controle de produção e relatórios</p>
+</div>
 
 <h1>LOGIN</h1>
 
@@ -67,42 +72,33 @@ i{
 <label>Senha</label>
 
 <div class="campo-senha">
-
-<input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
-
-<i class="fa-solid fa-eye" id="toggleSenha"></i>
-
+  <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+  <i class="fa-solid fa-eye" id="toggleSenha"></i>
 </div>
 
-<p class="erro" style="display: none;">Email ou senha incorretos</p>
+<p class="erro" style="display:none;">Email ou senha incorretos</p>
 
-<div class="captcha-box">
-  
-  <div class="captcha-left">
-    <input type="checkbox" id="naoRobo">
-    <label for="naoRobo">Não sou um robô</label>
-  </div>
+<!-- ❌ REMOVIDO CAPTCHA FAKE (MUITO IMPORTANTE) -->
 
-  <div class="captcha-right">
-    <div class="captcha-logo">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/RecaptchaLogo.svg/250px-RecaptchaLogo.svg.png" alt="" class="recaptcha">
-    </div>
-  </div>
-
-</div>
-
-<button type="submit"> <i class="fa-solid fa-arrow-right-to-bracket"></i> Entrar</button>
+<button type="submit">
+  <i class="fa-solid fa-arrow-right-to-bracket"></i> Entrar
+</button>
 
 </form>
 
 <div class="links">
+  <a href="recuperar.html">Esqueceu a senha?</a>
 
-<a href="recuperar.html">Esqueceu a senha?</a>
+  <p>Sem conta?
+    <a href="cadastro.html">Cadastre-se</a>
+  </p>
 
-<p>sem conta? 
-<a href="cadastro.html">CADASTRE-SE</a>
-</p>
-
+  <!-- IMPORTANTE PARA GOOGLE TRUST -->
+  <div style="margin-top:15px; font-size:12px;">
+    <a href="privacy.html">Privacidade</a> |
+    <a href="terms.html">Termos</a> |
+    <a href="about.html">Sobre</a>
+  </div>
 </div>
 
 </div>
@@ -112,26 +108,18 @@ i{
 <script src="script/login.js"></script>
 
 <script>
-/* OLHO DA SENHA */
-
 const senha = document.getElementById("senha");
 const olho = document.getElementById("toggleSenha");
 
-olho.addEventListener("click", function(){
-
-if(senha.type === "password"){
-senha.type = "text";
-olho.classList.remove("fa-eye");
-olho.classList.add("fa-eye-slash");
-}
-else{
-senha.type = "password";
-olho.classList.remove("fa-eye-slash");
-olho.classList.add("fa-eye");
-}
-
+olho.addEventListener("click", function () {
+  if (senha.type === "password") {
+    senha.type = "text";
+    olho.classList.replace("fa-eye", "fa-eye-slash");
+  } else {
+    senha.type = "password";
+    olho.classList.replace("fa-eye-slash", "fa-eye");
+  }
 });
-
 </script>
 
 </body>
