@@ -201,14 +201,11 @@ async function deletarCiclo() {
 
    const token = localStorage.getItem("token");
 
-const relatorio_nome = await fetch(`https://agromulti-2.onrender.com/ciclo-dados`,{
+const relatorio_nome = await fetch(`https://agromulti-2.onrender.com/ciclo/${id_ciclo}`,{
   headers: {
     Authorization: "Bearer " + token,
     
   },
-   body: JSON.stringify({
-            id_ciclo: id_ciclo
-        })
   
 });
     const nome = await relatorio_nome.json();
