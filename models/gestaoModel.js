@@ -19,7 +19,7 @@ exports.gastosLista = async(id_ciclo)=>{
     return result.rows;
 }
 //pegar gasto
-exports.pegargasto = (id)=>{
+exports.pegargasto = async(id)=>{
     const result = await db.query("SELECT * FROM gastos WHERE id_gastos =$1", [id]);
     return result.rows[0];
 }
