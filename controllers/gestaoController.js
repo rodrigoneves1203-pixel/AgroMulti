@@ -27,7 +27,13 @@ exports.adicionarGasto = async (req, res) => {
     res.status(500).send("Erro ao adicionar gasto");
   }
 };
+// pegar gasto
+exports.pegarGasto = async(req,res)=>{
+  const id = req.params.id_gasto;
+  const result = await gestaoModel.pegargasto(id);
+  res.send(result);
 
+}
 // listar
 exports.listarGastos = async (req, res) => {
   try {
@@ -56,29 +62,12 @@ exports.deleteGasto = async (req, res) => {
 exports.atualizarGasto = async (req, res) => {
   try {
     const id_gastos = req.params.id_gastos;
-    const oque_mudar = req.params.oque_mudar;
-    const novo_valor = req.body.novo_valor;
+    const descricao = req.body.descricao;
+    const valor = req.body.novo_valor;
+    const data = req.body.data;
+    const nome = req.body.nome;
 
-    let query;
-
-    switch (oque_mudar) {
-      case "descricao_gasto":
-        query = "UPDATE gastos SET descricao_gasto = $1 WHERE id_gastos = $2";
-        break;
-      case "valor":
-        query = "UPDATE gastos SET valor = $1 WHERE id_gastos = $2";
-        break;
-      case "data_inicio":
-        query = "UPDATE gastos SET data_inicio = $1 WHERE id_gastos = $2";
-        break;
-      case "nome_gasto":
-        query = "UPDATE gastos SET nome_gasto = $1 WHERE id_gastos = $2";
-        break;
-      default:
-        return res.status(400).json({ error: "Campo inválido" });
-    }
-
-    await gestaoModel.atualizarGasto(novo_valor, id_gastos, query);
+    await gestaoModel.atualizarGasto(valor,data,descricao,nome, id_gastos);
     res.json({ message: "Atualizado com sucesso" });
   } catch (error) {
     console.error(error);
@@ -115,7 +104,12 @@ exports.adicionarGanho = async (req, res) => {
     res.status(500).send("Erro ao adicionar ganho");
   }
 };
-
+//pegar ganho
+exports.pegarGanho = async (req,res)=>{
+  const id = req.params.id_ganho;
+  const result = await gestaoModel.pegarganho(id);
+  res.send(result);
+}
 // listar
 exports.listarGanhos = async (req, res) => {
   try {
@@ -131,34 +125,14 @@ exports.listarGanhos = async (req, res) => {
 exports.atualizarGanho = async (req, res) => {
   try {
     const id_receita = req.params.id_receita;
-    const oque_mudar = req.params.oque_mudar;
-    const novo_valor = req.body.novo_valor;
+    const data = req.body.data;
+    const valor = req.body.valor;
+    const quantidade = req.body.quantidade;
+    const descricao = req.body.descricao;
+    const nome = req.body.nome;
 
-    let query;
 
-    switch (oque_mudar) {
-      case "quantidade":
-        query = "UPDATE receita SET quantidade = $1 WHERE id_receita = $2";
-        break;
-      case "valor_receita":
-        query = "UPDATE receita SET valor_receita = $1 WHERE id_receita = $2";
-        break;
-      case "data_venda":
-        query = "UPDATE receita SET data_venda = $1 WHERE id_receita = $2";
-        break;
-      case "nome_produto":
-        query = "UPDATE receita SET nome_produto = $1 WHERE id_receita = $2";
-        break;
-      case "descricao_venda":
-        query = "UPDATE receita SET descricao_venda = $1 WHERE id_receita = $2";
-        break;
-      default:
-        return res
-          .status(400)
-          .json({ error: "Campo a ser atualizado não válido" });
-    }
-
-    await gestaoModel.atualizarGanho(novo_valor, id_receita, query);
+    await gestaoModel.atualizarGanho(data,valor,quantidade,descricao,nome,id_receita);
     res.json({ message: "Receita atualizada com sucesso" });
   } catch (error) {
     console.error(error);

@@ -41,50 +41,23 @@ alt="Logo da Agro Multi">
 Escolha o campo que deseja atualizar
 </p>
 
-<label for="campo">
-Campo que deseja alterar
-</label>
+<label for="data_ganho">Data</label>
+<input id="data_ganho" type="date" required>
 
-<select id="campo"
-onchange="mostrarCampo()"
-aria-label="Selecionar campo do ganho para editar">
+<label for="nome_ganho">Nome</label>
+<input id="nome_ganho" required>
 
-<option value="">Selecione</option>
+<label for="descricao_ganho">Descrição</label>
+<input id="descricao_ganho">
 
-<option value="nome_produto">
-Nome do produto
-</option>
+<label for="quantidade_ganho">Quantidade</label>
+<input id="quantidade_ganho">
 
-<option value="valor_receita">
-Valor da venda
-</option>
+<label for="valor_ganho">Valor</label>
+<input id="valor_ganho" type="number" step="0.01">
 
-<option value="data_venda">
-Data da venda
-</option>
-
-<option value="descricao_venda">
-Descrição da venda
-</option>
-
-<option value="quantidade">
-Quantidade vendida
-</option>
-
-</select>
-
-<div id="area-input"
-aria-live="polite"
-aria-label="Campo para editar o valor selecionado">
-
-</div>
-
-<button class="bt"
-onclick="atualizar()"
-aria-label="Salvar alteração do ganho">
-
-<span>Salvar Alteração</span>
-
+<button onclick="atualizar()" class="bt">
+Salvar alteração
 </button>
 
 </main>

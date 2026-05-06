@@ -3,56 +3,36 @@ const params = new URLSearchParams(window.location.search);
 
 const id_ganho = params.get("id_receita");
 const id_ciclo = params.get("id_ciclo");
-
+    const data = document.getElementById("data_ganho");
+    const nome = document.getElementById("nome_ganho");
+    const descricao = document.getElementById("descricao_ganho");
+    const quantidade = document.getElementById("quantidade_ganho");
+    const valor = document.getElementById("valor");
+    
 
     function voltar() {
     window.location.href = `configurar_ciclo.html?id=${id_ciclo}`;
 }
 
-function mostrarCampo() {
-    const campo = document.getElementById("campo").value;
-    const area = document.getElementById("area-input");
+function mostrarDados() {
+    const dados = await fetch(`https://agromulti-2.onrender.com/receita/${id_ganho}`,{
+        method: "GET"
+    });
+    await dados.json();
 
-    area.innerHTML = "";
+    nome.value = dados.nome_produto || " ";
+    data.value = dados.data_venda || "20/20/2006";
+    valor.value = dados.valor_receita || "0";
+    quantidade.value = dados.quantidade || " ";
+    descricao.value = dados.descricao_venda || " ";
 
-    if (campo === "nome_produto") {
-        area.innerHTML = `
-        <span>nome</span>
-        <input id="valor_input" placeholder="Novo nome">`;
-    }
-
-    if (campo === "valor_receita") {
-        area.innerHTML = `
-        <span>valor</span>
-        <input id="valor_input" placeholder="Novo valor">`;
-
-    }
-
-    if (campo === "data_venda") {
-        area.innerHTML = `
-        <span>data da venda</span>
-        <input id="valor_input" type="date">`;
-    }
-
-    if (campo === "quantidade"){
-        area.innerHTML = `
-        <span>quantidade</span>
-        <input id="valor_input"  placeholder="quantidade">`;
-    }
-
-    if (campo === "descricao_venda") {
-        area.innerHTML = `
-        <span>descrição</span>
-        <input id="valor_input" placeholder="Nova descrição">`;
-    }
 }
-
+mostrarDados();
 
 
 async function atualizar() {
 
-    const campo = document.getElementById("campo").value;
-    const valor1 = document.getElementById("valor_input").value;
+    const valor1 = document.getElementById("valor_ganho").value;
      if (!/^\d+([.,]\d{1,2})?$/.test(valor1)) {
         alert("Digite um valor válido! Ex: 150,50");
         return;
@@ -64,13 +44,18 @@ async function atualizar() {
         alert("Preencha os dados!");
         return;
     }
-    const response = await fetch(`https://agromulti-2.onrender.com/receita/${id_ganho}/${campo}`, {
+    const response = await fetch(`https://agromulti-2.onrender.com/receita/${id_ganho}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            novo_valor: valor
+            data: data.value,
+            quantidade: quantidade.value,
+            valor: valor.valor,
+            descricao: descricao.value,
+            nome: nome.value
+
         })
     });
 

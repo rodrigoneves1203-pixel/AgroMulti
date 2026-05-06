@@ -18,6 +18,11 @@ exports.gastosLista = async(id_ciclo)=>{
 
     return result.rows;
 }
+//pegar gasto
+exports.pegargasto = (id)=>{
+    const result = await db.query("SELECT * FROM gastos WHERE id_gastos =$1", [id]);
+    return result.rows[0];
+}
 //deletar gasto
 exports.deleteGasto = async(id)=>{
 
@@ -26,8 +31,8 @@ exports.deleteGasto = async(id)=>{
 
 }
 //atualizar gasto
-exports.atualizarGasto = async(novo_valor, id_gastos,query)=>{
-    const result = await db.query(query, [novo_valor, id_gastos]);
+exports.atualizarGasto = async(valor,data,descricao,nome, id_gastos)=>{
+    const result = await db.query("UPDATE gastos SET valor=$1, data=$2, descricao=$3, nome=$4 WHERE id_gastos=$5 RETURNING *", [valor,data,descricao,nome, id_gastos]);
     return result.rows[0];
 }
 
@@ -43,9 +48,16 @@ exports.listarGanho = async(id)=>{
     const result = await db.query("SELECT * FROM receita WHERE id_ciclo = $1",[id]);
     return result.rows;
 }
+//pegar ganho
+exports.pegarganho= async(id)=>{
+   const result = await db.query("SELECT * FROM receita WHERE id_receita = $1",[id]);
+   return result.rows[0];
+}
+
+
 //atualizar ganho
-exports.atualizarGanho = async(novo_valor, id_receita,query)=>{
-    const result = await db.query(query, [novo_valor, id_receita]);
+exports.atualizarGanho = async(data,valor,quantidade,descricao,nome,id_receita)=>{
+    const result = await db.query("UPDATE receita SET data=$1, valor=$2, quantidade=$3, descricao=$4, nome=$5 WHERE id_receita = $6 RETURNING *", [data,valor,quantidade,descricao,nome,id_receita]);
     return result.rows[0];
 }
 //deletar

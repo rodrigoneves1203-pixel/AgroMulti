@@ -39,30 +39,17 @@ alt="Logo da Agro Multi">
 
 <h1>Editar Gasto</h1>
 
-<p>
-Escolha o campo que deseja atualizar
-</p>
+<label for="data_inicio">Data</label>
+<input id="data_inicio" type="date">
 
-<label for="campo">
-Campo que deseja alterar
-</label>
+<label for="nome_gasto">Nome do gasto</label>
+<input id="nome_gasto">
 
-<select id="campo"
-onchange="mostrarCampo()"
-aria-label="Selecionar campo para editar">
+<label for="descricao_gasto">Descrição</label>
+<input id="descricao_gasto">
 
-<option value="">Selecione</option>
-<option value="nome_gasto">Nome</option>
-<option value="valor">Valor</option>
-<option value="data_inicio">Data</option>
-<option value="descricao_gasto">Descrição</option>
-
-</select>
-
-<div id="area-input"
-aria-live="polite">
-
-</div>
+<label for="valor">Valor</label>
+<input id="valor">
 
 <button class="bt"
 onclick="atualizar()"

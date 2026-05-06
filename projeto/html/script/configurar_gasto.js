@@ -3,47 +3,25 @@ const params = new URLSearchParams(window.location.search);
 
 const id_gasto = params.get("id_gasto");
 const id_ciclo = params.get("id_ciclo");
-
-
+const data = document.getElementById("data_inicio");
+const nome = document.getElementById("nome_gasto");
+const descricao = document.getElementById("descricao_gasto");
+const valor = document.getElementById("valor");
 
 function mostrarCampo() {
-    const campo = document.getElementById("campo").value;
-    const area = document.getElementById("area-input");
-
-    area.innerHTML = "";
-
-    if (campo === "nome_gasto") {
-
-        area.innerHTML = `
-        <span>Nome</span>
-        <input id="valor_input" placeholder="Novo nome">`;
-    }
-
-    if (campo === "valor") {
-        
-        area.innerHTML = `
-        <span>valor</span>
-        <input id="valor_input" placeholder="Novo valor">`;
-    }
-
-    if (campo === "data_inicio") {
-        area.innerHTML = `
-        <span>Data inicio</span>
-        <input id="valor_input" type="date">`;
-    }
-
-    if (campo === "descricao_gasto") {
-        area.innerHTML = `
-        <span>Descrição</span>
-        <input id="valor_input" placeholder="Nova descrição">`;
-    }
+   const dados = await fetch (`https://agromulti-2.onrender.com/gastos/${id_gasto}`,{
+    method: "GET"
+   });
+   nome.value = dados.nome_gasto || " ";
+   data.value = dados.data_inicio || "20/20/2006";
+   valor.value = dados.valor || "0";
+   descricao.value = dados.descricao_gasto || " ";
 }
 function voltar() {
     window.location.href = `configurar_ciclo.html?id=${id_ciclo}`;
 }
 async function atualizar() {
 
-    const campo = document.getElementById("campo").value;
     const valor1 = document.getElementById("valor_input").value;
      if (!/^\d+([.,]\d{1,2})?$/.test(valor1)) {
         alert("Digite um valor válido! Ex: 150,50");
@@ -56,13 +34,16 @@ async function atualizar() {
         alert("Preencha os dados!");
         return;
     }
-    const response = await fetch(`https://agromulti-2.onrender.com/gastos/${campo}/${id_gasto}`, {
+    const response = await fetch(`https://agromulti-2.onrender.com/gastos/${id_gasto}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            novo_valor: valor
+            valor: valor.value,
+            data: data.value,
+            nome: nome.value,
+            descricao:descricao.value
         })
     });
 
