@@ -209,10 +209,8 @@ const relatorio_nome = await fetch(`https://agromulti-2.onrender.com/ciclo/${id_
   
 });
     const nome = await relatorio_nome.json();
-    let nome_re = '';
-    nome.forEach((nome_rela) => {
-        if(nome_rela.id_ciclo == id_ciclo) nome_re = nome_rela.nome_ciclo;
-    })
+    const nome_re = nome.nome_ciclo;
+
 
 const result = await fetch(`https://agromulti-2.onrender.com/encerrar-ciclo/${id_usuario}/${id_ciclo}`, {
         method: "POST",
