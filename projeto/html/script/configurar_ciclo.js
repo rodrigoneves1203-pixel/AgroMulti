@@ -28,8 +28,6 @@ function irParaCriarGanho() {
     window.location.href = `criar_ganho.html?id=${id_ciclo}`;
 }
 
-console.log("ID DO CICLO:", id_ciclo);
-
 async function listarGastos() {
     const response = await fetch(`https://agromulti-2.onrender.com/gastos/${id_ciclo}`);
     const dados = await response.json();
@@ -203,10 +201,15 @@ async function deletarCiclo() {
 
    const token = localStorage.getItem("token");
 
-const relatorio_nome = await fetch(`https://agromulti-2.onrender.com/ciclo/${id_usuario}`,{
+const relatorio_nome = await fetch(`https://agromulti-2.onrender.com/ciclo-dados`,{
   headers: {
-    Authorization: "Bearer " + token
-  }
+    Authorization: "Bearer " + token,
+    
+  },
+   body: JSON.stringify({
+            id_ciclo: id_ciclo
+        })
+  
 });
     const nome = await relatorio_nome.json();
     let nome_re = '';
@@ -234,43 +237,6 @@ const result = await fetch(`https://agromulti-2.onrender.com/encerrar-ciclo/${id
     window.location.href = `relatorio.html?id=${id_ciclo}`
 
 };
-async function verificarCiclo() {
-
-    const response = await fetch(`https://agromulti-2.onrender.com/ciclo/`,{
-         headers:{
-   Authorization: "Bearer " + token
- }}
- 
-    );
-    const dados = await response.json();
-
-    let cicloAtual = dados.find(c => c.id_ciclo == id_ciclo);
-if(cicloAtual && cicloAtual.trancado){
-  const teto = document.getElementById("texto");
-    alerta.style.display = "flex"
-     teto.style.display = "flex"
-    document.getElementById("btn-Gasto").disabled = true;
-    document.getElementById("btn-add-ganho").disabled = true;
-    document.getElementById("gerar").disabled = true;
-
-    const itens = document.getElementsByClassName("dados");
-    alert("ciclo encerrado! por favor, vá para relatórios e atualize os dados")
-    for (let item of itens) {
-        item.style.opacity = "0.6";
-        item.style.cursor = "not-allowed";
-        item.title = "Ciclo encerrado";
-    }
-
-    const botoes = document.querySelectorAll(".dados button");
-
-    for (let botao of botoes) {
-        botao.disabled = true;
-        botao.title = "Ciclo encerrado";
-    }
-}
-else  alerta.style.display = "none";
-
-}
    function ver_relatorio(){
   window.location.href = `relatorio.html?id=${id_usuario}&id_ciclo=${id_ciclo}`
    }
@@ -278,5 +244,5 @@ else  alerta.style.display = "none";
 window.onload = async () => {
     await listarGastos();
     await listarReceita();
-    verificarCiclo();
+    
 };

@@ -1,10 +1,10 @@
 const db = require("../db");
 
 //buscar
-exports.buscar = async () =>{
+exports.buscar = async (id) =>{
 
-    const result = await db.query('SELECT * FROM ciclo');
-  return result.rows;
+    const result = await db.query('SELECT * FROM ciclo WHERE id_ciclo = $1',[id]);
+  return result.rows[0];
 
 }
 //encontrar usuario

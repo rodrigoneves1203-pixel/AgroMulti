@@ -1,8 +1,9 @@
 const cicloModel = require("../models/cicloModel");
 
 exports.dados = async (req, res) => {
+  const id = req.body.id_ciclo;
   try {
-    const dados = await cicloModel.buscar();
+    const dados = await cicloModel.buscar(id);
     res.send(dados);
   } catch (error) {
     console.error(error);
