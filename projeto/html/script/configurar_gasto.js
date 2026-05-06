@@ -8,10 +8,11 @@ const nome = document.getElementById("nome_gasto");
 const descricao = document.getElementById("descricao_gasto");
 const valor = document.getElementById("valor");
 
-function mostrarCampo() {
+ async function mostrarCampo() {
    const dados = await fetch (`https://agromulti-2.onrender.com/gastos/${id_gasto}`,{
     method: "GET"
    });
+   await dados.json();
    nome.value = dados.nome_gasto || " ";
    data.value = dados.data_inicio || "20/20/2006";
    valor.value = dados.valor || "0";

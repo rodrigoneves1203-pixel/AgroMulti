@@ -14,7 +14,7 @@ const id_ciclo = params.get("id_ciclo");
     window.location.href = `configurar_ciclo.html?id=${id_ciclo}`;
 }
 
-function mostrarDados() {
+ async function mostrarDados() {
     const dados = await fetch(`https://agromulti-2.onrender.com/receita/${id_ganho}`,{
         method: "GET"
     });

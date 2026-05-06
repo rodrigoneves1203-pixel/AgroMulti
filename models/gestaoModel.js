@@ -32,7 +32,7 @@ exports.deleteGasto = async(id)=>{
 }
 //atualizar gasto
 exports.atualizarGasto = async(valor,data,descricao,nome, id_gastos)=>{
-    const result = await db.query("UPDATE gastos SET valor=$1, data=$2, descricao=$3, nome=$4 WHERE id_gastos=$5 RETURNING *", [valor,data,descricao,nome, id_gastos]);
+    const result = await db.query("UPDATE gastos SET valor=$1,  data_inicio=$2, descricao_gasto=$3, nome_gasto=$4 WHERE id_gastos=$5 RETURNING *", [valor,data,descricao,nome, id_gastos]);
     return result.rows[0];
 }
 
@@ -57,7 +57,7 @@ exports.pegarganho= async(id)=>{
 
 //atualizar ganho
 exports.atualizarGanho = async(data,valor,quantidade,descricao,nome,id_receita)=>{
-    const result = await db.query("UPDATE receita SET data=$1, valor=$2, quantidade=$3, descricao=$4, nome=$5 WHERE id_receita = $6 RETURNING *", [data,valor,quantidade,descricao,nome,id_receita]);
+    const result = await db.query("UPDATE receita SET data_venda=$1, valor_receita=$2,quantidade=$3,descricao_venda=$4,nome_produto=$5 WHERE id_receita = $6 RETURNING *", [data,valor,quantidade,descricao,nome,id_receita]);
     return result.rows[0];
 }
 //deletar
