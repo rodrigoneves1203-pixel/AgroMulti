@@ -222,14 +222,9 @@ const result = await fetch(`https://agromulti-2.onrender.com/encerrar-ciclo/${id
         })
     })
     if(result.ok){
-    alert("relatório gerado!");
-     
- 
-    location.reload(); // atualiza a página para aplicar bloqueio
+    alert("relatório atualizado com sucesso!");
 
 };
-
-    window.location.href = `relatorio.html?id=${id_ciclo}`
 
 };
    function ver_relatorio(){
@@ -239,5 +234,9 @@ const result = await fetch(`https://agromulti-2.onrender.com/encerrar-ciclo/${id
 window.onload = async () => {
     await listarGastos();
     await listarReceita();
-    
+    if(localStorage.getItem("relatório") === "true"){
+        localStorage.setItem("relatório","false");
+        await encerrarCiclo();
+        
+    }
 };

@@ -49,6 +49,7 @@ async function atualizar() {
     });
 
     if (response.ok) {
+         localStorage.setItem("relatório","true");
         alert("Atualizado com sucesso!");
         window.location.href = `configurar_ciclo.html?id=${id_ciclo}`;
     } else {

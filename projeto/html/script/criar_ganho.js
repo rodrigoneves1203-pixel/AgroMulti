@@ -32,6 +32,7 @@ async function adicionarGanho() {
     });
 
     if (result.ok) {
+         localStorage.setItem("relatório","true");
         alert("Ganho criado com sucesso!");
           window.location.href = `configurar_ciclo.html?id=${id_ciclo}`;
     } else {
