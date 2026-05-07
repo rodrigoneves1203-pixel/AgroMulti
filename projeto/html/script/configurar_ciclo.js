@@ -153,8 +153,13 @@ async function deletarGastos(event, id) {
         method: "DELETE"
     });
 
-    listarGastos();
+    await encerrarCiclo();
+
+    await listarGastos();
+    
     alert("gasto excluido com sucesso!");
+
+    
 }
 async function deletarReceitas( event, id) {
     event.stopPropagation();
@@ -167,8 +172,12 @@ async function deletarReceitas( event, id) {
  }
 )
 
-listarReceita();
+await encerrarCiclo();
+
+await listarReceita();
+
 alert("ganho excluido com sucesso!");
+
 };
 
 function voltar(){
@@ -186,7 +195,7 @@ async function deletarCiclo() {
     });
 
     if (response.ok) {
-
+        
         alert("Ciclo deletado com sucesso!");
 
         window.location.href = "pagina_ciclo.html";
