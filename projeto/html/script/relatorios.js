@@ -59,8 +59,8 @@ let grafico;
 
 async function gerarGrafico(id_ciclo){
 
-    const gastosRes = await fetch(`https://agromulti-2.onrender.com/gastos/${id_ciclo}`);
-    const receitasRes = await fetch(`https://agromulti-2.onrender.com/receita/${id_ciclo}`);
+    const gastosRes = await fetch(`https://agromulti-2.onrender.com/gastos/ciclo/${id_ciclo}`);
+    const receitasRes = await fetch(`https://agromulti-2.onrender.com/receita/ciclo//${id_ciclo}`);
 
     const gastos = await gastosRes.json();
     const receitas = await receitasRes.json();
