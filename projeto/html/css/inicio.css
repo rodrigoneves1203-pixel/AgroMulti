@@ -114,9 +114,10 @@ header img{
 /* CONTAINER */
 .cards-container{
   display: flex;
+  flex-direction: row;
   justify-content: center;
   gap: 20px;
-  padding: 50px;
+  padding-top: 50px;
   flex-wrap: wrap; /* responsivo */
 }
 
@@ -219,7 +220,7 @@ font-size: 16px;
 .cards{
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
   flex-wrap: wrap;
 }
 
@@ -229,7 +230,10 @@ font-size: 16px;
   text-align: center;
 }
 
-
+#card-e{
+  width: 30%;
+  
+}
 
 
 
@@ -246,11 +250,35 @@ font-size: 16px;
   .publico h2{
     font-size: 22px;
   }
-
-
-  .card{
-    width: 40%;
-  }
+.cards-container{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  justify-content: center !important;
+  flex-wrap: nowrap; /* responsivo */
+}
+.card{
+  width: 90%;
+    
+}
+.cards{
+  align-items: center;
+          justify-content: center;
+}
+#card-e{
+    background: white;
+  border-radius: 15px;
+  overflow: hidden;
+    
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 70%;
+  align-items: center;
+  
+  
+}
 }
 
 
