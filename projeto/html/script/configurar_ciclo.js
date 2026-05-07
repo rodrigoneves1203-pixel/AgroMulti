@@ -29,7 +29,7 @@ function irParaCriarGanho() {
 }
 
 async function listarGastos() {
-    const response = await fetch(`https://agromulti-2.onrender.com/gastos/${id_ciclo}`);
+    const response = await fetch(`https://agromulti-2.onrender.com/gastos/ciclo/${id_ciclo}`);
     const dados = await response.json();
 
     const lista = document.getElementById("lista_gastos");
@@ -84,7 +84,7 @@ async function listarGastos() {
 
 }
 async function listarReceita() {
-    const result = await fetch(`https://agromulti-2.onrender.com/receita/${id_ciclo}`);
+    const result = await fetch(`https://agromulti-2.onrender.com/receita/ciclo/${id_ciclo}`);
     const dados = await result.json();
     const listar = document.getElementById("lista_receitas");
     listar.innerHTML = "";

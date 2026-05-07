@@ -2,8 +2,8 @@ const express = require("express");
 const rotas = express.Router();
 const ControllerGestao = require("../controllers/gestaoController")
 
-rotas.get("/gastos/:id_ciclo",ControllerGestao.listarGastos);
-rotas.get("/receita/:id_ciclo",ControllerGestao.listarGanhos);
+rotas.get("/gastos/ciclo/:id_ciclo",ControllerGestao.listarGastos);
+rotas.get("/receita/ciclo/:id_ciclo",ControllerGestao.listarGanhos);
 rotas.get("/receita/:id_ganho",ControllerGestao.pegarGanho);
 rotas.get("/gastos/:id_gasto",ControllerGestao.pegarGasto);
 rotas.post("/adicionar/gastos/:id_ciclo",ControllerGestao.adicionarGasto);
