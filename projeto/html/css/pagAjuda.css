@@ -380,7 +380,7 @@ body{
  position: fixed; /* fixa na tela */
     top:90px;
     left:20px;
-    z-index: 99;
+    z-index: 9;
 padding:12px 20px;
 
 font-size:14px;
