@@ -19,8 +19,6 @@ async function listarCiclos() {
 
     dados.forEach((ciclo, index) => {
 
-        let relatorio = ciclo.trancado ? "fechado para adição" : "aberto para adição";
-        let graf = ciclo.trancado ? "fechadoc": "fechadod";
         const numeroCiclo = index+1;
         
         const li = document.createElement("li");
@@ -49,9 +47,6 @@ li.innerHTML = `
         <strong>Data de início:</strong> ${formatarData(ciclo.data_inicio)}
     </p>
 
-    <p class="status ${graf}">
-        <strong>Situação do relatório:</strong> ${relatorio}
-    </p>
          <button class="btn-abrir-ciclo">
         Ver detalhes do ciclo
     </button>
