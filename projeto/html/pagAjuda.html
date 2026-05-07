@@ -4,139 +4,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Central de ajuda</title>
+    <title>Central de Ajuda</title>
 
     <link rel="stylesheet" href="css/pagAjuda.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/padrão.css">
     <link rel="stylesheet" href="css/acessibilidade.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="icon" href="fotos/Logo Agro Multi digital em formato favicon.png" type="image/png">
+
+    <link rel="icon"
+        href="fotos/Logo Agro Multi digital em formato favicon.png"
+        type="image/png">
 </head>
 
 <body>
+
     <header class="topo">
         <div class="overlay">
-            <h1>Central de ajuda</h1>
-            <p>Aqui você entende conceitos básicos do nosso site.</p>
+            <h1>Central de Ajuda</h1>
+            <p>Aqui você encontra explicações sobre os principais conceitos do nosso sistema.</p>
         </div>
     </header>
+
     <!-- BOTÕES -->
     <div class="cards">
 
         <button class="card" onclick="window.location.href='pagCicloProducao2.html'">
             <i class="fa-solid fa-seedling"></i>
-            <h3>O Que é um Ciclo de produção?</h3>
+
+            <h3>O que é um ciclo de produção?</h3>
+
             <hr>
-            <h2>click para ver mais detalhes!</h2>
+
+            <h2>Clique para ver mais detalhes!</h2>
         </button>
 
         <button class="card" onclick="window.location.href='pagFinanceiro.html'">
+
             <i class="bi bi-wallet2"></i>
-            <h3>FINANCEIRO</h3>
+
+            <h3>Financeiro</h3>
+
             <hr>
-            <h2>click para ver mais detalhes!</h2>
+
+            <h2>Clique para ver mais detalhes!</h2>
         </button>
 
     </div>
 
     <!-- FAQ -->
     <div class="faq">
-        <h2>PERGUNTAS FREQUENTES</h2>
+
+        <h2>Perguntas Frequentes</h2>
 
         <div class="question" onclick="toggle(this)">
+
             <div class="pergunta">
-                <span class="arrow"><i class="bi bi-chevron-down"></i></span>
-                <span>Como cadastrar produção?</span>
+
+                <span class="arrow">
+                    <i class="bi bi-chevron-down"></i>
+                </span>
+
+                <span>Como cadastrar uma produção?</span>
+
             </div>
-            <div class="answer">Para registrar um novo ciclo no sistema, siga estas etapas simples: <br>
 
-                1. Acesse o Menu: Clique na aba Ciclos de Produção localizada no painel principal. <br>
-
-                2. Inicie o Cadastro: Selecione o botão + Adicionar Ciclo. <br>
-
-                3. Preencha os Dados: Insira as informações solicitadas no formulário (como datas, insumos ou
-                identificação). <br>
-
-                4. Finalize: Clique em Salvar para concluir o registro.</div>
-        </div>
-
-        <div class="question" onclick="toggle(this)">
-            <div class="pergunta">
-                <span class="arrow"><i class="bi bi-chevron-down"></i></span>
-                <span>Como gerar relatórios?</span>
-            </div>
             <div class="answer">
-                Após cadastrar sua produção na página de Ciclos de Produção, siga estas etapas para gerenciar seus
-                documentos: <br>
 
-                1. Acessar os Detalhes da Produção <br>
-                Na listagem de ciclos, localize a produção desejada e clique no botão Ver Detalhes. Uma nova aba será
-                aberta com as informações completas.
+                Para registrar um novo ciclo no sistema, siga estas etapas simples:
+                <br><br>
+
+                1. Acesse o menu: clique na aba <strong>Ciclos de Produção</strong>, localizada no painel principal.
+                <br><br>
+
+                2. Inicie o cadastro: selecione o botão <strong>+ Adicionar Ciclo</strong>.
+                <br><br>
+
+                3. Preencha os dados: informe as informações solicitadas no formulário, como datas, insumos e identificação da produção.
+                <br><br>
+
+                4. Finalize: clique em <strong>Salvar</strong> para concluir o registro.
+
+            </div>
+
+        </div>
+
+        <div class="question" onclick="toggle(this)">
+
+            <div class="pergunta">
+
+                <span class="arrow">
+                    <i class="bi bi-chevron-down"></i>
+                </span>
+
+                <span>Como gerar relatórios?</span>
+
+            </div>
+
+            <div class="answer">
+
+                Após cadastrar sua produção na página de <strong>Ciclos de Produção</strong>, siga estas etapas para gerenciar seus documentos:
+                <br><br>
+
+                1. Acesse os detalhes da produção
                 <br>
-                2. Escolher a Ação Necessária <br>
+                Na lista de ciclos, localize a produção desejada e clique no botão <strong>Ver Detalhes</strong>. Uma nova página será aberta com todas as informações do ciclo.
+                <br><br>
+
+                2. Escolha a ação desejada
+                <br>
                 Na tela de detalhes, você encontrará três opções principais:
+                <br><br>
+
+                <strong>Gerar Relatório:</strong> utilize esta opção caso seja a primeira vez processando os dados deste ciclo.
+                <br><br>
+
+                <strong>Ver Relatório:</strong> escolha esta opção caso o relatório já tenha sido gerado anteriormente.
+                <br><br>
+
+                <strong>Deletar:</strong> utilize esta opção para remover registros, se necessário.
+                <br><br>
+
+                3. Localize relatórios salvos
                 <br>
-                Gerar Relatório: Utilize esta opção se for a primeira vez que você está processando os dados deste
-                ciclo.
-                <br>
-                Ver Relatório: Escolha esta opção caso o relatório já tenha sido gerado anteriormente.
-                <br>
-                Deletar: Utilize para remover registros, se necessário.
-                <br>
-                3. Localizar Relatórios Salvos <br>
-                Todos os relatórios gerados ficam armazenados de forma centralizada para facilitar a consulta futura:
-                <br>
-                1.Retorne à Página Principal do sistema.
-                <br>
-                2.Clique no botão Relatórios.
-                <br>
-                3.Nesta página, você encontrará o histórico de todos os documentos que você salvou.
+                Todos os relatórios gerados ficam armazenados de forma centralizada para facilitar consultas futuras:
+                <br><br>
+
+                1. Retorne à página principal do sistema.
+                <br><br>
+
+                2. Clique no botão <strong>Relatórios</strong>.
+                <br><br>
+
+                3. Nesta página, você encontrará o histórico de todos os documentos salvos.
+
             </div>
+
         </div>
 
         <div class="question" onclick="toggle(this)">
-            <div class="pergunta">
-                <span class="arrow"><i class="bi bi-chevron-down"></i></span>
-                <span>O que é ciclo de produção?</span>
-            </div>
-            <div class="answer">Um ciclo de produção é o conjunto de etapas que uma empresa ou atividade realiza para
-                transformar matéria-prima em produto final. Esse processo começa com a obtenção dos recursos (como
-                sementes, materiais ou insumos), passa pela produção em si (cultivo, fabricação ou criação) e termina
-                quando o produto está pronto para ser vendido.
 
-                Resumindo: é o “caminho” que um produto percorre desde o início até chegar ao consumidor.</div>
+            <div class="pergunta">
+
+                <span class="arrow">
+                    <i class="bi bi-chevron-down"></i>
+                </span>
+
+                <span>O que é um ciclo de produção?</span>
+
+            </div>
+
+            <div class="answer">
+
+                Um ciclo de produção é o conjunto de etapas realizadas para transformar matéria-prima em um produto final.
+
+                Esse processo começa com a obtenção dos recursos necessários, como sementes, materiais ou insumos, passa pela produção em si (cultivo, fabricação ou criação) e termina quando o produto está pronto para ser vendido.
+                <br><br>
+
+                Resumindo: é o caminho que um produto percorre desde o início da produção até chegar ao consumidor.
+
+            </div>
+
         </div>
 
         <div class="question" onclick="toggle(this)">
+
             <div class="pergunta">
-                <span class="arrow"><i class="bi bi-chevron-down"></i></span>
+
+                <span class="arrow">
+                    <i class="bi bi-chevron-down"></i>
+                </span>
+
                 <span>Como entrar em contato com o suporte?</span>
+
             </div>
-            <div class="answer">Para falar conosco, role a página até encontrar o botão azul Falar com o Suporte. Ao
-                clicar, basta selecionar a opção de contato que preferir.</div>
+
+            <div class="answer">
+
+                Para falar conosco, role a página até encontrar o botão azul <strong>Falar com o Suporte</strong>.
+
+                Ao clicar nele, basta selecionar a opção de contato desejada.
+
+            </div>
+
         </div>
 
     </div>
 
     <!-- SUPORTE -->
     <div class="support">
+
         <p>Não encontrou sua resposta?</p>
+
         <button onclick="suporte()">
+
             <i class="bi bi-chat-dots"></i>
+
             Falar com o suporte
+
         </button>
-    </div>
 
     </div>
 
-
-    <!--botão de suporte-->
+    <!-- MODAL SUPORTE -->
     <div id="modalSuporte" class="modal">
+
         <div class="modal-content">
+
             <span class="fechar" onclick="fecharModal()">&times;</span>
 
-            <h2>Como podemos te ajudar?</h2>
+            <h2>Como podemos ajudar você?</h2>
 
             <button onclick="abrirWhats()">
                 💬 Falar no WhatsApp
@@ -145,86 +222,126 @@
             <button onclick="irContato()">
                 📩 Enviar e-mail
             </button>
+
         </div>
+
     </div>
 
-
-
-
-    <!--botão de voltar-->
-    <button class="btn-voltar" onclick="voltar()"><i class="fas fa-arrow-left"></i> Voltar</button>
+    <!-- BOTÃO VOLTAR -->
+    <button class="btn-voltar" onclick="voltar()">
+        <i class="fas fa-arrow-left"></i>
+        Voltar
+    </button>
 
     <!-- SCRIPT -->
     <script>
+
         function toggle(element) {
+
             let answer = element.querySelector('.answer');
             let arrow = element.querySelector('.arrow i');
 
             if (answer.style.display === 'block') {
+
                 answer.style.display = 'none';
                 arrow.style.transform = 'rotate(0deg)';
+
             } else {
+
                 answer.style.display = 'block';
                 arrow.style.transform = 'rotate(180deg)';
+
             }
         }
+
         function buscar() {
+
             let input = document.getElementById('searchInput').value.toLowerCase();
             let resposta = document.getElementById('resposta');
 
-            // IA simples (respostas automáticas)
+            // respostas automáticas
             if (input.includes("finanças")) {
-                resposta.innerText = "Finanças é o controle do dinheiro e organização de gastos.";
+
+                resposta.innerText = "Finanças é a área responsável pelo controle do dinheiro e pela organização de gastos.";
+
             }
             else if (input.includes("economia")) {
-                resposta.innerText = "Economia é a forma como o dinheiro circula na sociedade.";
+
+                resposta.innerText = "Economia é a forma como os recursos e o dinheiro circulam na sociedade.";
+
             }
             else if (input.includes("ajuda") || input.includes("suporte")) {
-                resposta.innerText = "Você pode entrar em contato pelo suporte ou WhatsApp 😉";
+
+                resposta.innerText = "Você pode entrar em contato conosco pelo suporte ou pelo WhatsApp 😉";
+
             }
             else if (input.includes("olá") || input.includes("oi")) {
-                resposta.innerText = "Olá! Como posso te ajudar hoje?";
+
+                resposta.innerText = "Olá! Como posso ajudar você hoje?";
+
             }
             else {
-                resposta.innerText = "Não encontrei uma resposta, tente reformular 🤖";
+
+                resposta.innerText = "Não encontrei uma resposta para sua dúvida. Tente reformular a pergunta 🤖";
+
             }
 
-            // mantém teu sistema de filtro funcionando
+            // filtro das perguntas
             let perguntas = document.querySelectorAll('.question');
 
             perguntas.forEach(p => {
+
                 let texto = p.innerText.toLowerCase();
-                p.style.display = texto.includes(input) ? 'block' : 'none';
+
+                p.style.display = texto.includes(input)
+                    ? 'block'
+                    : 'none';
+
             });
         }
 
         function abrirCategoria(nome) {
-            alert('Você clicou na categoria: ' + nome);
+
+            alert('Você selecionou a categoria: ' + nome);
+
         }
 
         function suporte() {
+
             document.getElementById('modalSuporte').style.display = 'flex';
+
         }
 
         function fecharModal() {
+
             document.getElementById('modalSuporte').style.display = 'none';
+
         }
 
         function abrirWhats() {
+
             window.open("https://wa.me/5581999999999", "_blank");
+
         }
 
         function irContato() {
-            window.location.href = "mailto:seuemail@gmail.com?subject=Contato%20pelo%20site&body=Olá,%20gostaria%20de%20mais%20informações.";
-        }
-        function voltar() {
-            window.location.href = "principal.html";
+
+            window.location.href =
+                "mailto:seuemail@gmail.com?subject=Contato%20pelo%20site&body=Olá,%20gostaria%20de%20mais%20informações.";
+
         }
 
+        function voltar() {
+
+            window.location.href = "principal.html";
+
+        }
 
     </script>
+
     <script src="script/script-acessibilidade/injetar-acessibilidade.js"></script>
     <script src="script/top_bar/padrao.js"></script>
+
 </body>
 
 </html>
