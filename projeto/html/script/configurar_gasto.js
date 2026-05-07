@@ -9,39 +9,37 @@ const descricao = document.getElementById("descricao_gasto");
 const valor = document.getElementById("valor");
 
  async function mostrarCampo() {
-   const dados = await fetch (`https://agromulti-2.onrender.com/gastos/${id_gasto}`,{
+   const result = await fetch (`https://agromulti-2.onrender.com/gastos/${id_gasto}`,{
     method: "GET"
    });
-   await dados.json();
-   nome.value = dados.nome_gasto || " ";
-   data.value = dados.data_inicio || "20/20/2006";
-   valor.value = dados.valor || "0";
-   descricao.value = dados.descricao_gasto || " ";
+   const dados = await result.json();
+   nome.value = dados.nome_gasto || "";
+   data.value = dados.data_inicio || "";
+   valor.value = dados.valor || "";
+   descricao.value = dados.descricao_gasto || "";
 }
+mostrarCampo();
 function voltar() {
     window.location.href = `configurar_ciclo.html?id=${id_ciclo}`;
 }
 async function atualizar() {
 
-    const valor1 = document.getElementById("valor_input").value;
-     if (!/^\d+([.,]\d{1,2})?$/.test(valor1)) {
+    const valor2 = document.getElementById("valor").value;
+     if (!/^\d+([.,]\d{1,2})?$/.test(valor2)) {
         alert("Digite um valor válido! Ex: 150,50");
         return;
     }
 
     // converte vírgula pra ponto
-    const valor = parseFloat(valor1.replace(",", "."));
-    if (!campo || !valor) {
-        alert("Preencha os dados!");
-        return;
-    }
+    const valor3 = parseFloat(valor2.replace(",", "."));
+
     const response = await fetch(`https://agromulti-2.onrender.com/gastos/${id_gasto}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            valor: valor.value,
+            valor: valor3,
             data: data.value,
             nome: nome.value,
             descricao:descricao.value

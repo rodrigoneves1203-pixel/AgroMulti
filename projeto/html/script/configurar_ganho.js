@@ -20,11 +20,11 @@ const id_ciclo = params.get("id_ciclo");
     });
     await dados.json();
 
-    nome.value = dados.nome_produto || " ";
-    data.value = dados.data_venda || "20/20/2006";
-    valor.value = dados.valor_receita || "0";
-    quantidade.value = dados.quantidade || " ";
-    descricao.value = dados.descricao_venda || " ";
+    nome.value = dados.nome_produto || "";
+    data.value = dados.data_venda || "";
+    valor.value = dados.valor_receita || "";
+    quantidade.value = dados.quantidade || "";
+    descricao.value = dados.descricao_venda || "";
 
 }
 mostrarDados();
@@ -39,11 +39,8 @@ async function atualizar() {
     }
 
     // converte vírgula pra ponto
-    const valor = parseFloat(valor1.replace(",", "."));
-    if (!campo || !valor) {
-        alert("Preencha os dados!");
-        return;
-    }
+    const valo3 = parseFloat(valor1.replace(",", "."));
+
     const response = await fetch(`https://agromulti-2.onrender.com/receita/${id_ganho}`, {
         method: "PUT",
         headers: {
@@ -52,7 +49,7 @@ async function atualizar() {
         body: JSON.stringify({
             data: data.value,
             quantidade: quantidade.value,
-            valor: valor.valor,
+            valor: valo3,
             descricao: descricao.value,
             nome: nome.value
 
