@@ -44,14 +44,14 @@ main {
     background: rgba(255, 255, 255, 0.76);
     padding: 30px;
     border-radius: 12px;
-    margin-top: 8%;
+    margin-top: 150px;
     margin-bottom: 4%;
     width: 400px;
     max-width: 90%;
 }
 
 /* LOGO (corrigido) */
-.logo {
+.log {
     width: 100%;
     max-width: 380px;
     margin-bottom: 10px;
@@ -112,7 +112,9 @@ select:focus {
 .bt:hover {
     background: #1b5e20;
 }
-
+label{
+align-self: flex-start;
+}
 /* BOTÃO VOLTAR */
 .btn-voltar {
 
@@ -153,6 +155,7 @@ transform:translateY(-2px);
 box-shadow:0 6px 15px rgba(0,0,0,0.35);
 
 }
+
 
 /* CLICK */
 

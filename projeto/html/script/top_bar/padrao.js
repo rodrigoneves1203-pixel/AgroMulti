@@ -1,5 +1,5 @@
-
 console.log("TOPBAR JS CARREGOU");
+
 function getTituloPagina() {
   const nomes = {
     "principal.html": "Início",
@@ -12,14 +12,13 @@ function getTituloPagina() {
     "criar_ciclo.html": "Criar ciclo",
     "criar_gasto.html": "Criar gasto",
     "criar_ganho.html": "Criar ganho",
-    "pagFinanceiro.html":"Ajuda",
+    "pagFinanceiro.html": "Ajuda",
     "configurar_ciclo.html": "Ciclo",
     "notas.html": "Anotações",
-    "parcerias.html":  "Parceiros",
+    "parcerias.html": "Parceiros",
     "configurar_ganho.html": "atualizar",
     "configurar_gasto.html": "atualizar"
   };
-  
 
   const pagina = window.location.pathname.split("/").pop();
 
@@ -27,6 +26,9 @@ function getTituloPagina() {
 }
 
 function montarLayoutAgroMulti() {
+
+  /* evita duplicar topbar/sidebar */
+  if (document.querySelector(".topbar")) return;
 
   const layout = `
    
@@ -72,8 +74,9 @@ function montarLayoutAgroMulti() {
 </button>
 </li>
 
-<li><button onclick="window.location.href='notas.html'"
-aria-label="Anotções">
+<li>
+<button onclick="window.location.href='notas.html'"
+aria-label="Anotações">
 
 <i class="fa-solid fa-clipboard-list"></i>
 
@@ -102,6 +105,7 @@ aria-label="Anotções">
 <span>Perfil</span>
 </button>
 </li>
+
 <li id="sair">
 <button onclick="window.location.href='index.html'" class="d-flex align-items-center gap-2">
 <i class="fa-solid fa-right-from-bracket"></i>
@@ -112,23 +116,41 @@ aria-label="Anotções">
 </ul>
 
 </nav>
-
-
   `;
 
   document.body.insertAdjacentHTML("afterbegin", layout);
 
-const toggleBtn = document.querySelector(".menu-toggle")
-const sidebar = document.querySelector(".sidebar")
+  const toggleBtn = document.querySelector(".menu-toggle");
+  const sidebar = document.querySelector(".sidebar");
 
-toggleBtn.addEventListener("click", () => {
-sidebar.classList.toggle("active")
-})
+  /* abrir/fechar sidebar */
+  toggleBtn.addEventListener("click", (event) => {
+
+    event.stopPropagation();
+
+    sidebar.classList.toggle("active");
+
+  });
+
+  /* fechar ao clicar fora */
+  document.addEventListener("click", (event) => {
+
+    const clicouNaSidebar = sidebar.contains(event.target);
+    const clicouNoBotao = toggleBtn.contains(event.target);
+
+    if (!clicouNaSidebar && !clicouNoBotao) {
+
+      sidebar.classList.remove("active");
+
+    }
+
+  });
+
 }
 
-function ir_relatorio(){
-    window.location.href = `relatorio.html?id=${id_usuario}`
+function ir_relatorio() {
+  window.location.href = `relatorio.html?id=${id_usuario}`;
 }
-/* 🔥 ESSENCIAL PRA NÃO SUMIR AO VOLTAR */
+
 document.addEventListener("DOMContentLoaded", montarLayoutAgroMulti);
 window.addEventListener("pageshow", montarLayoutAgroMulti);

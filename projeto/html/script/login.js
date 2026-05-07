@@ -26,7 +26,6 @@ if (usuario.erro) {
 localStorage.setItem("token", usuario.token);
 localStorage.setItem("id_usuario", usuario.id_usuario);
 
-alert("login feito com sucesso!");
 
 window.location.href = "principal.html";
 
