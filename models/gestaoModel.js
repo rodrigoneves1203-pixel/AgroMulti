@@ -33,7 +33,7 @@ exports.deleteGasto = async(id)=>{
 //atualizar gasto
 exports.atualizarGasto = async(valor,data,descricao,nome, id_gastos)=>{
     const result = await db.query("UPDATE gastos SET valor=$1,  data_inicio=$2, descricao_gasto=$3, nome_gasto=$4 WHERE id_gastos=$5 RETURNING *", [valor,data,descricao,nome, id_gastos]);
-    return result.rows[0];
+    return result.rows[0];    
 }
 
 // ganho
