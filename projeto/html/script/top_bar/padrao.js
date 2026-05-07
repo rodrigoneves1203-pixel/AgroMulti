@@ -38,7 +38,7 @@ function montarLayoutAgroMulti() {
 </button>
 
 <div class="logo d-flex align-items-center flex-wrap">
-
+  <img src="https://agromulti-2.onrender.com/html/fotos/AGRO%20MULTI%20original%20(1).png" id="log">
  <h1 class="title1">${getTituloPagina()}</h1>
 
 </div>

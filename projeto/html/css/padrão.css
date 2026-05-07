@@ -22,6 +22,7 @@ height:70px;
 
 display:flex;
 align-items:center;
+    justify-content: center;
 gap: 0;
 background-color: rgb(255, 255, 255);
 
@@ -49,7 +50,7 @@ box-shadow:0 4px 10px rgba(0,0,0,0.2);
   display:flex;
   align-items:center;
   flex-wrap: nowrap;
-  margin-left:63px;
+  height: 59px;
    pointer-events: none;  
 }
 
@@ -57,6 +58,7 @@ box-shadow:0 4px 10px rgba(0,0,0,0.2);
   width:160px;
   height:169.13px;
   object-fit:contain;
+  justify-self: start;
 }
 
 /* TEXTO AGRUPADO */
@@ -188,13 +190,13 @@ opacity:0.8;
 @media (max-width:480px){
 
 .logo{
-margin-left:30px;
+justify-content: center;
 }
 
 .logo img{
 width:100px;
 gap: 0px;
-display:block;
+display:none;
 }
 
 
