@@ -1,0 +1,117 @@
+/* ===== RESET ===== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #000000, #4d5055);
+    color: #000000;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+/* ===== CONTAINER ===== */
+.container{
+    width: 100%;
+    max-width: 900px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    animation: aparecer 0.6s ease;
+}
+
+/* ===== TITULOS ===== */
+h1{
+    font-size: 2.5rem;
+    color: #22c55e;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+h2{
+    font-size: 1.4rem;
+    color: #4ade80;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+/* ===== TEXTOS ===== */
+p{
+    line-height: 1.8;
+    color: #e2e8f0;
+    font-size: 1rem;
+}
+
+/* ===== BOTÃO VOLTAR ===== */
+.btn-voltar{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #22c55e;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: 0.3s;
+    z-index: 9999;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.btn-voltar:hover{
+    background: #16a34a;
+    transform: translateY(-2px);
+}
+
+.btn-voltar i{
+    margin-right: 8px;
+}
+
+/* ===== ANIMAÇÃO ===== */
+@keyframes aparecer{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media(max-width: 768px){
+
+    .container{
+        padding: 25px;
+    }
+
+    h1{
+        font-size: 2rem;
+    }
+
+    h2{
+        font-size: 1.2rem;
+    }
+
+    p{
+        font-size: 0.95rem;
+    }
+
+    .btn-voltar{
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+}
