@@ -63,7 +63,7 @@ exports.atualizarGasto = async (req, res) => {
   try {
     const id_gastos = req.params.id_gastos;
     const descricao = req.body.descricao;
-    const valor = req.body.novo_valor;
+    const valor = req.body.valor;
     const data = req.body.data;
     const nome = req.body.nome;
 

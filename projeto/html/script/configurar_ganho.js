@@ -24,7 +24,9 @@ async function mostrarDados() {
     console.log(dados);
 
     nome.value = dados.nome_produto || "";
-    data.value = dados.data_venda || "";
+   data.value = dados.data_venda
+    ? dados.data_venda.split("T")[0]
+    : "";
     valor.value = dados.valor_receita || "";
     quantidade.value = dados.quantidade || "";
     descricao.value = dados.descricao_venda || "";

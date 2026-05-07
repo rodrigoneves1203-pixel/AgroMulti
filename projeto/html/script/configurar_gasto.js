@@ -14,7 +14,9 @@ const valor = document.getElementById("valor");
    });
    const dados = await result.json();
    nome.value = dados.nome_gasto || "";
-   data.value = dados.data_inicio || "";
+  data.value = dados.data_inicio
+    ? dados.data_inicio.split("T")[0]
+    : "";
    valor.value = dados.valor || "";
    descricao.value = dados.descricao_gasto || "";
 }
