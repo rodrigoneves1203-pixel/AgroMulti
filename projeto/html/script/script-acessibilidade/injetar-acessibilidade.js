@@ -128,7 +128,7 @@ btnDaltonico.addEventListener("click", () => {
         document.body.classList.contains("daltonico")
     );
     window.localStorage.setItem("t",conf);
-    btnDaltonico.innerText = conf? "ativar": "desativar";
+    btnDaltonico.innerText = conf? "desativar": "ativar";
     
     
 });
