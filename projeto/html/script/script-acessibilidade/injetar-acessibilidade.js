@@ -1,6 +1,6 @@
 let conf = localStorage.getItem("t") === "true";
 
-let tex = conf ? "ativar" : "desativar";
+let tex = conf ? "desativar" : "ativar";
 window.addEventListener("load", () => {
 
 const html = `
