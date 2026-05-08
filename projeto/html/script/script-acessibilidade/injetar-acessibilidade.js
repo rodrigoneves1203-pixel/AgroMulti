@@ -1,3 +1,6 @@
+let conf = localStorage.getItem("t") === "true";
+
+let tex = conf ? "ativar" : "desativar";
 window.addEventListener("load", () => {
 
 const html = `
@@ -23,7 +26,7 @@ const html = `
 
 <h6>Modo daltônico</h6>
 
-<button id="modoDaltonico">Ativar</button>
+<button id="modoDaltonico">${tex}</button>
 
 <hr>
 
@@ -71,7 +74,17 @@ abrir.onclick = () => sidebar.classList.toggle("ativa");
 
 fechar.onclick = () => sidebar.classList.remove("ativa");
 
+/* FECHAR FORA */
+document.addEventListener("click", (e) => {
 
+    const clicouNaSidebar = sidebar.contains(e.target);
+    const clicouNoBotao = abrir.contains(e.target);
+
+    if (!clicouNaSidebar && !clicouNoBotao) {
+        sidebar.classList.remove("ativa");
+    }
+
+});
 /* =========================
    FONTE (PERSISTENTE)
 ========================= */
@@ -105,13 +118,19 @@ btnDiminuir.addEventListener("click", () => {
 ========================= */
 
 btnDaltonico.addEventListener("click", () => {
+    
+    conf = !conf;
 
     document.body.classList.toggle("daltonico");
-
+    
     localStorage.setItem(
         "daltonico",
         document.body.classList.contains("daltonico")
     );
+    window.localStorage.setItem("t",conf);
+    btnDaltonico.innerText = conf? "ativar": "desativar";
+    
+    
 });
 
 

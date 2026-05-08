@@ -218,3 +218,10 @@ max-width:40%;
 }
 
 }
+.menu li button.active{
+background:rgba(255,255,255,0.08);
+color:#ffffff;
+outline:3px solid orange;
+font-weight:700;
+
+}

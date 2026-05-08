@@ -190,6 +190,7 @@ input:focus {
 
 /* BOTÕES */
 .botoes {
+    box-sizing: content-box !important;
     margin-top: 30px;
     display: flex;
     gap: 14px;
@@ -251,4 +252,10 @@ button:hover {
 
 .excluir:hover {
   background: #c62828;
+}
+@media (max-width: 380px){
+.botoes{
+    
+    flex-direction: column;
+}
 }
