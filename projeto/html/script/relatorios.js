@@ -113,13 +113,14 @@ async function gerarGrafico(id_ciclo){
             labels: ["Gastos", "Vendas", "Lucro"],
             datasets: [{
                 label: "Valores do ciclo",
-                data: [totalGasto, totalVenda, lucro]
-            }],
-             backgroundColor: [
+                data: [totalGasto, totalVenda, lucro],
+                 backgroundColor: [
                 "orange",
                 "blue",
                 "red"
             ],
+            }],
+            
 
         },
         options: {
