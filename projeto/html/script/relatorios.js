@@ -86,7 +86,7 @@ async function gerarGrafico(id_ciclo){
     if(grafico){
         grafico.destroy();
     }
-
+        if(totalVenda>totalGasto){
     grafico = new Chart(ctx, {
         type: "bar",
         data: {
@@ -94,12 +94,39 @@ async function gerarGrafico(id_ciclo){
             datasets: [{
                 label: "Valores do ciclo",
                 data: [totalGasto, totalVenda, lucro]
-            }]
+            }],
+             backgroundColor: [
+                "orange",
+                "blue",
+                "green"
+            ],
+
         },
         options: {
             responsive: true
         }
-    });
+    });}
+    else{
+      grafico = new Chart(ctx, {
+        type: "bar",
+        data: {
+            labels: ["Gastos", "Vendas", "Lucro"],
+            datasets: [{
+                label: "Valores do ciclo",
+                data: [totalGasto, totalVenda, lucro]
+            }],
+             backgroundColor: [
+                "orange",
+                "blue",
+                "red"
+            ],
+
+        },
+        options: {
+            responsive: true
+        }
+    });  
+    }
 
 }
 
