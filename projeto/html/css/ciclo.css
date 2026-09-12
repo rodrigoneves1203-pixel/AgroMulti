@@ -12,21 +12,7 @@ line-height:1.5;
 #a{
     font-size: 25px;
 }
-body::before{
-content:"";
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background-image:url("../fotos/ciclo_fundo.jpeg");
-background-repeat: no-repeat;
-background-size:cover;
-background-position:center;
-filter:blur(2px);
-overflow-y: visible;
-z-index:-1;
-}
+
 
 /* BARRA SUPERIOR */
 

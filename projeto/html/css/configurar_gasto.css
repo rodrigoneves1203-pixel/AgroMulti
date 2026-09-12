@@ -19,21 +19,7 @@ body {
     align-items: center;
 
 }
-body::before{
-content:"";
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background-image:url("../fotos/bison-wild-sunny-day.jpg");
-background-repeat: no-repeat;
-background-size:cover;
-background-position:center;
-background-attachment: fixed;
-filter:blur(2px);
-z-index:-1;
-}
+
 
 /* CONTAINER */
 main {
