@@ -52,7 +52,6 @@ li.innerHTML = `
     </button>
    
    </article>
-   <img class="pecu" src="${ciclo.imagem}">
 `;
  li.classList.add(ciclo.tipo);
 const botao = li.querySelector(".btn-abrir-ciclo");
